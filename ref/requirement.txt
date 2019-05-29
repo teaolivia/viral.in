@@ -1,0 +1,44 @@
+Jadi nama aplikasinya adalah Viralin
+secara garis besar aplikasi ini merupakan aplikasi untuk mengiklankan produk dimana ada promotor / referal yang membantu dalam mempromosikan iklan tersebut, kemudian nantinya referal akan mendapatkan point yang dapat di cairkan dalam bentuk saldo rekening.
+Nanti setiap iklan yang dishare oleh referal akan mendapatkan masing point berdasarkan jumlah like, click, comment ,dll. Kemudian dari sisi pembuat iklan bisa membuat iklan dan bisa memilih user referal mana saja yang akan dijadikan sebagai promotor.
+Nantinya juga akan ada penambahan beberapa fitur. Dalam proses pengerjaaanya kita bagi menjadi 3 tahap dan pada tahap 1 ini kita akan fokuskan pada fungsi dasarnya dulu yaitu ;
+
+Tahap 1 komunikasi antara Penjual & Promotor
+
+User :
+1. Pebisnis / Penjual
+2. Customer
+3. Promotor / Referal
+4. Admin (All access)
+
+Features :
+1. Terdapat menu login and register untuk keempat user.
+2. Set Parameter Iklan
+
+Skenario :
+A. Penjual :
+1. Melakukan registrasi dan berhasil login sehingga masuk ke dashboard utama.
+
+2. Pada tampilan landing page dashboard terdapat menu buat iklan dan penjual membuat iklan dengan adanya parameter seperti fitur di facebook ad ( Target pasar, durasi penyebaran, wilayah, demografi,dll), jenis produk, jumlah referal yang bisa share iklan kemudian, attach foto / video kemudian submit iklan dan terposting di web viralin. Maka iklan yang sudah di set akan muncul di web viralin.
+
+B. Promotor
+1. Promotor melakukan registrasi dan berhasil login dan masuk ke landing page viralin yang akan memunculkan iklan-iklan yang telah diposting oleh penjual.
+
+2. Kemudian promotor memilih iklan mana saja yang akan dia sebarkan. Setiap iklan mempunyai batas jumlah promotor yang menyebarkan iklan tersebut.
+Example :
+suatu iklan membatasi jumlah promotor sebanyak 3 user maka promotor ke 4 tidak bisa memilih iklan tersebut dan muncul notifikasi bahwa jumlah promotor sudah maksimum dan menampilkan siapa saja promotor yang terlibat dalam menyebarkan iklan tersebut.
+Ketika iklan telah dipilih oleh promotor maka akan muncul link yang  nantinya akan disebarkan oleh promotor melalui socmed. Terkait gamifikasi / rekapitulasi point, sistem referal, rewarding referal,dll akan dikerjakan pada Tahap ke 2.
+
+[22:47, 5/28/2019] Risal: Maka output pada tahap 1 ini :
+1. Penjual : 
+a. Membuat iklan dan set parameter iklan
+b. Making decision (approve/decline) permintaan menjadi promotor suatu iklan
+c. Melihat informasi iklan yang sudah dibuat 
+
+2. Promotor :
+a. Memilih iklan yang akan di promosikan
+
+3. Admin : 
+Ada fitur penjual dan pembeli
+[22:47, 5/28/2019] Risal: Rencana untuk kedepan (jika memungkinkan utk di realisasikan) akan ada fitur sms blast, qr code, top up saldo
+[22:49, 5/28/2019] Risal: Tapi kurang lebih tahap 1 seperti yg ditampilkan di mockup. Disana ditampilkan sms blast dan top up , itu secara fungsi belum ada (dummy) tapi tetap ditampilkan pada dashboardnya
