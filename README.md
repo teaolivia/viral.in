@@ -1,4 +1,5 @@
 # viral.in
+viral.in merupakan aplikasi untuk mengiklankan produk dimana ada promotor / referal yang membantu dalam mempromosikan iklan tersebut, kemudian nantinya referal akan mendapatkan point yang dapat di cairkan dalam bentuk saldo rekening.
 
 # ! please only make changes in your dev branch
 
