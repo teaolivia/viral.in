@@ -12,7 +12,7 @@ viral.in merupakan aplikasi untuk mengiklankan produk dimana ada promotor / refe
 2. ```git add .```
 3. ```git commit -m "<message>"```
 4. ```git checkout master```
-5. ```git pull origin master```
+5. ```git pull```
 6. ```git checkout <branch_name>```
 7. ```git rebase master```
 8. ```git checkout master```
