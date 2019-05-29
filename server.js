@@ -4,7 +4,7 @@ var express = require('express'),
       cors = require('cors'),
       mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost:27017/vuenodedb").then(
+mongoose.connect("mongodb://127.0.0.1/my_database").then(
           () => {console.log('Database connection is successful') },
           err => { console.log('Error when connecting to the database'+ err)}
 );
