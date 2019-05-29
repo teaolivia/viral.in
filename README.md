@@ -14,3 +14,15 @@ viral.in merupakan aplikasi untuk mengiklankan produk dimana ada promotor / refe
 8. ```git checkout master```
 9. ```git merge <branch_name>```
 10. ```git push```
+### Get back to work
+11. You are now in branch ```master```. Go back to your dev branch by ```git checkout <branch_name>```
+12. Push your changes in your own branch by ```git push```
+### Useful git tools
+* ```git status```
+To check your git current situation, including where branch you at and staged/unstaged changes. Also contains hints what to do next.
+* ```git log```
+To see past commits and its details. Including commitID
+* ```git reset --HARD```
+Completely unstage current changes. !!! ALL YOUR UNSAVED CHANGES WILL BE LOST !!!
+* ``` git revert <commit-id>
+Go back to commit with id
