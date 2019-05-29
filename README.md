@@ -24,5 +24,5 @@ To check your git current situation, including where branch you at and staged/un
 To see past commits and its details. Including commitID
 * ```git reset --HARD```
 Completely unstage current changes. !!! ALL YOUR UNSAVED CHANGES WILL BE LOST !!!
-* ``` git revert <commit-id>
+* ```git revert <commit-id>```
 Go back to commit with id
