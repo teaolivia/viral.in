@@ -13,11 +13,19 @@ class App extends Component {
   }
   render() {
     return (
+<<<<<<< HEAD
       <Router>
         <div className="App">
           <p>Hello, world!</p>
         </div>
       </Router>      
+=======
+      <Route>
+        <div className="App">
+          <p>Hello, world!</p>
+        </div>
+      </Route>      
+>>>>>>> change jsx root into Route
     );
   }
 }
