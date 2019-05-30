@@ -2,5 +2,5 @@
 
 /node_modules
 
-./viralin/package-lock.json
+viralin/package-lock.json
 package-lock.json
