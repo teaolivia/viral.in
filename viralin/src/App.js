@@ -13,11 +13,11 @@ class App extends Component {
   }
   render() {
     return (
-      <Route>
+      <Router>
         <div className="App">
           <p>Hello, world!</p>
         </div>
-      </Route>      
+      </Router>      
     );
   }
 }
