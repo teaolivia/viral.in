@@ -2,6 +2,13 @@
 
 # ! please only make changes in your dev branch
 
+## File Structure
+```
+--api		/* our backend source */
+--ref		/* media resources such as images, logo, media, documents */
+--viralin	/* frontend source */
+```
+
 ### How to push to master
 1. Make sure you are currently in ```dev-<yourname>``` branch. If you are currently in ```master```, switch by ```git checkout dev-<yourname>```.
 2. ```git add .```
