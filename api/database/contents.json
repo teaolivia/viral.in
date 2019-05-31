@@ -1,0 +1,70 @@
+{
+    "1234" : {
+        "1" : {
+            "title": "Indihome Paket Gamer",
+            "status": "TRUE",
+            "isReferral": "TRUE",
+            "content_type": "kuota",
+            "duration_start": "01/01/2019",
+            "duration_end": "01/02/2019",
+            "type": "digital",
+            "asset": 999999,
+            "games_rule": "Spotlight uh, Moonlight uh, X got shot at a stoplight uh"
+        },
+        "2": {
+            "title": "Ayam Geprek Hot",
+            "status": "TRUE",
+            "isReferral": "TRUE",
+            "content_type": "kuota",
+            "duration_start": "02/03/2019",
+            "duration_end": "20/03/2019",
+            "type": "fisik",
+            "asset": 999999,
+            "games_rule": "Ayam Geprek super pedas enak mantap gurih!!!"
+        },
+        "3": {
+            "title": "Indihome Paket Gamer",
+            "status": "TRUE",
+            "isReferral": "TRUE",
+            "content_type": "kuota",
+            "duration_start": "01/01/2019",
+            "duration_end": "01/02/2019",
+            "type": [
+                "fisik",
+                "digital"
+            ],
+            "asset": 999999,
+            "games_rule": "Spotlight uh, Moonlight uh, X got shot at a stoplight uh"
+        }
+    },
+    "5678": {
+        "4": {
+            "title": "Indihome Paket Gamer",
+            "status": "TRUE",
+            "isReferral": "TRUE",
+            "content_type": "kuota",
+            "duration_start": "01/01/2019",
+            "duration_end": "01/02/2019",
+            "type": [
+                "fisik",
+                "digital"
+            ],
+            "asset": 999999,
+            "games_rule": "Spotlight uh, Moonlight uh, X got shot at a stoplight uh"
+        },
+        "5": {
+            "title": "Indihome Paket Gamer",
+            "status": "TRUE",
+            "isReferral": "TRUE",
+            "content_type": "kuota",
+            "duration_start": "01/01/2019",
+            "duration_end": "01/02/2019",
+            "type": [
+                "fisik",
+                "digital"
+            ],
+            "asset": 999999,
+            "games_rule": "Spotlight uh, Moonlight uh, X got shot at a stoplight uh"
+        }
+    }
+}

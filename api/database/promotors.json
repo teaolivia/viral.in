@@ -1,0 +1,26 @@
+{
+    "234": {
+        "username": "spongebob",
+        "name": "SpongeBob SquarePants",
+        "email": "spongebob_squarepants@gmail.com",
+        "phone": "+6281111111111",
+        "city": "Bikini Bottom",
+        "province": "Pacific Ocean"
+    },
+    "567": {
+        "username": "flyingdutchman",
+        "name": "Flying Dutchman",
+        "email": "flying_dutchman@gmail.com",
+        "phone": "+6281111111112",
+        "city": "Deep Sea",
+        "province": "Mariana"
+    },
+    "890": {
+        "username": "karatechop",
+        "name": "Sandy Cheeks",
+        "email": "sandy_cheeks@gmail.com",
+        "phone": "+6281111111113",
+        "city": "Bandung",
+        "province": "Jawa Barat"
+    }
+}

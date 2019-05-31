@@ -1,0 +1,16 @@
+{
+        "1" : {
+        "title": "Indihome Paket Gamer",
+        "status": "TRUE",
+        "isReferral": "TRUE",
+        "content_type": "kuota",
+        "duration_start": "dd/mm/yyyy",
+        "duration_end": "dd/mm/yyyy",
+        "type": [
+            "fisik",
+            "digital"
+        ],
+        "asset": 999999,
+        "games_rule": "Spotlight uh, Moonlight uh, X got shot at a stoplight uh"    
+    }
+}
