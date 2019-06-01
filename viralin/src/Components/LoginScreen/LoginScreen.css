@@ -1,10 +1,5 @@
 .LoginScreen {
-    width:100vw;
+    width:100%;
     min-height: 100vh;
-    background-color:black;
-}
-
-.LoginFormContainer {
-    /* margin: auto;
-    max-width: 800px; */
+    background-color:grey;
 }
