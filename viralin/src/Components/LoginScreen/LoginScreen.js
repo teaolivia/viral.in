@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 
 import './LoginScreen.css';
 
-import TabContainer from 'Components/TabContainer';
+import TabContainer from 'Components/TabContainer/TabContainer';
 
 class LoginScreen extends React.Component {
 
