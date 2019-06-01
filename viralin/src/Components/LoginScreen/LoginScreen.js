@@ -68,6 +68,16 @@ class LoginScreen extends React.Component {
                                         fullWidth
                                         onChange={this.changeUsernameValue}
                                     />
+                                <TextField
+                                        id="filled-password"
+                                        label="Password"
+                                        className="TextField"
+                                        margin="normal"
+                                        variant="filled"
+                                        type="password"
+                                        fullWidth
+                                        onChange={this.changeUsernameValue}
+                                    />
                                 </TabContainer>
                                 {this.state.tabValue === 0 && <TabContainer>
                                     Item one
