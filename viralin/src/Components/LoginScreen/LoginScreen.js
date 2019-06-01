@@ -1,4 +1,4 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -11,10 +11,8 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 
-// eslint-disable-next-line import/no-unresolved
 import 'Components/LoginScreen/LoginScreen.css';
 
-// eslint-disable-next-line import/no-unresolved
 import TabContainer from 'Components/TabContainer/TabContainer';
 
 class LoginScreen extends React.Component {
