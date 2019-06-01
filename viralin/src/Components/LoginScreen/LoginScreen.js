@@ -9,29 +9,7 @@ import Grid from '@material-ui/core/Grid';
 
 import './LoginScreen.css';
 
-import TabContainer from './Components/TabContainer';
-
-const styles = theme => ({
-    root: {
-      flexGrow: 1,
-    },
-    paper: {
-      padding: theme.spacing(2),
-      margin: 'auto',
-      maxWidth: 500,
-    },
-    image: {
-      width: 128,
-      height: 128,
-    },
-    img: {
-      margin: 'auto',
-      display: 'block',
-      maxWidth: '100%',
-      maxHeight: '100%',
-    },
-  });
-
+import TabContainer from 'Components/TabContainer';
 
 class LoginScreen extends React.Component {
 
@@ -77,5 +55,5 @@ class LoginScreen extends React.Component {
     }
 }
 
-export default withStyles(styles)(LoginScreen);
+export default LoginScreen;
 ;
