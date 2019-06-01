@@ -18,6 +18,8 @@ class App extends Component {
       <Router>        
         <div className="App">
           <Route path="/" exact component={LoginScreen} />
+          <Route path="/login" exact component={LoginScreen} />
+          <Route path="/register" exact component={LoginScreen} />
         </div>
       </Router>      
     );
