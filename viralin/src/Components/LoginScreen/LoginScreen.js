@@ -22,9 +22,11 @@ class LoginScreen extends React.Component {
     this.state = {
       tabValue: 0,
       username: '',
+      password: '',
     };
     this.changeTabValue = this.changeTabValue.bind(this);
     this.changeUsernameValue = this.changeUsernameValue.bind(this);
+    this.changePasswordValue = this.changePasswordValue.bind(this);
   }
 
   changeTabValue(event, newValue) {
@@ -35,8 +37,12 @@ class LoginScreen extends React.Component {
     this.setState({ username: event.target.value });
   }
 
+  changePasswordValue(event) {
+    this.setState({ password: event.target.value });
+  }
+
   render() {
-    const { tabValue, username } = this.state;
+    const { tabValue, username, password } = this.state;
     return (
       <div className="LoginScreen">
         <Grid
@@ -87,7 +93,8 @@ class LoginScreen extends React.Component {
                     variant="filled"
                     type="password"
                     fullWidth
-                    onChange={this.changeUsernameValue}
+                    value={password}
+                    onChange={this.changePasswordValue}
                   />
                   <Button variant="contained" color="primary" className="Button">
                     <Typography variant="subtitle1">Login</Typography>
