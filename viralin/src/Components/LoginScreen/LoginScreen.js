@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
 
 import './LoginScreen.css';
 
@@ -14,13 +15,20 @@ class LoginScreen extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {value : 0};
-        this.handleChange = this.handleChange.bind(this);
+        this.state = {
+            tabValue : 0,
+            username : '',
+        };
+        this.changeTabValue = this.changeTabValue.bind(this);
+        this.changeUsernameValue = this.changeUsernameValue.bind(this);
     }
     
+    changeTabValue(event, newValue) {
+        this.setState({tabValue : newValue});
+    }
 
-    handleChange(event, newValue) {
-        this.setState({value : newValue});
+    changeUsernameValue(event) {        
+        this.setState({username : event.target.value});
     }
 
     render () {
@@ -41,29 +49,33 @@ class LoginScreen extends React.Component {
                     <Grid item xs={12}><br /></Grid>
                     <Grid item xs={3}></Grid>
                     <Grid item xs={12} sm={6}>
-                        <Container>
+                        <Container> 
                             <Paper className = "Paper">
-                                <Tabs value={this.state.value} onChange={this.handleChange}>
+                                <Tabs value={this.state.tabValue}
+                                    onChange={this.changeTabValue}
+                                >
                                     <Tab label="Akun Bisnis" />
                                     <Tab label="Akun Promotor" />
                                     <Tab label="Akun Admin" />
                                 </Tabs>
-                                {this.state.value === 0 && <TabContainer>
-                                    s
-                                    {/* <TextField
-                                        id="filled-name"
-                                        label="Name"
-                                        className={classes.textField}
-                                        value={values.name}
-                                        onChange={this.setState({username : value})}
+                                <TabContainer>
+                                <TextField
+                                        id="filled-username"
+                                        label="Username"
+                                        className="TextField"
                                         margin="normal"
                                         variant="filled"
-                                    /> */}
+                                        fullWidth
+                                        onChange={this.changeUsernameValue}
+                                    />
+                                </TabContainer>
+                                {this.state.tabValue === 0 && <TabContainer>
+                                    Item one
                                 </TabContainer>}
-                                {this.state.value === 1 && <TabContainer>
+                                {this.state.tabValue === 1 && <TabContainer>
                                     Itesm Two
                                 </TabContainer>}
-                                {this.state.value === 2 && <TabContainer>
+                                {this.state.tabValue === 2 && <TabContainer>
                                     Itesm Three
                                 </TabContainer>}
                             </Paper>            
