@@ -23,15 +23,10 @@ class LoginScreen extends React.Component {
             username : '',
         };
         this.changeTabValue = this.changeTabValue.bind(this);
-        this.changeUsernameValue = this.changeUsernameValue.bind(this);
     }
     
     changeTabValue(event, newValue) {
         this.setState({tabValue : newValue});
-    }
-
-    changeUsernameValue(event) {        
-        this.setState({username : event.target.value});
     }
 
     render () {
@@ -61,7 +56,9 @@ class LoginScreen extends React.Component {
                                     <Tab label="Akun Promotor" />
                                 </Tabs>
                                 <TabContainer>
-                                    
+                                    <Button variant="contained" color="primary" className="Button">
+                                        <Typography variant="subtitle1">Register</Typography>
+                                    </Button>
                                 </TabContainer>                                                                
                             </Paper>                                       
                             <Typography variant="subtitle1">
