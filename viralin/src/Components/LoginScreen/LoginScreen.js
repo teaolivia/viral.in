@@ -46,6 +46,7 @@ class LoginScreen extends React.Component {
                                 <Tabs value={this.state.value} onChange={this.handleChange}>
                                     <Tab label="Akun Bisnis" />
                                     <Tab label="Akun Promotor" />
+                                    <Tab label="Akun Admin" />
                                 </Tabs>
                                 {this.state.value === 0 && <TabContainer>
                                     s
