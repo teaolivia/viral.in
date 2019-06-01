@@ -93,12 +93,14 @@ class LoginScreen extends React.Component {
                                         <Link className="Button">Register</Link>
                                     </Box>
                                     }
-                                </TabContainer>
-                                {(this.state.tabValue === 0 || this.state.tabValue === 1) && <TabContainer>
-                                    Itesm Two
-                                </TabContainer>}
-                                
-                            </Paper>            
+                                </TabContainer>                                                                
+                            </Paper>           
+                            {(this.state.tabValue === 0 || this.state.tabValue === 1) && 
+                                <Typography variant="subtitle1">
+                                    <br />
+                                    Promosi? Viralin ajaaa..
+                                </Typography>
+                            } 
                         </Container>
                     </Grid>
                     <Grid item xs={3}></Grid>
