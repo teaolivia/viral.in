@@ -37,6 +37,11 @@ module.exports = {
     modules: MODULE_PATHS,
     extensions: ['.js', '.jsx']
   },
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './',
+    hot: true
+  },
   plugins: [
     new HtmlWebPackPlugin({
       template: "./public/index.html",
