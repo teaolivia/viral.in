@@ -8,7 +8,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import Link from '@material-ui/core/Link';
+import { Link } from "react-router-dom";
 
 import 'Components/LoginScreen/LoginScreen.css';
 
@@ -88,9 +88,9 @@ class LoginScreen extends React.Component {
                                     <Box component="span">
                                         <br />
                                         <br />
-                                        <Link className="Button">Forgot Password?</Link>
+                                        <Link to="/forgot-password" className="Button">Forgot Password?</Link>
                                         &nbsp; | &nbsp; 
-                                        <Link className="Button">Register</Link>
+                                        <Link to="/register" className="Button">Register</Link>
                                     </Box>
                                     }
                                 </TabContainer>                                                                
