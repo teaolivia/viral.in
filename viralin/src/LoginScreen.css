@@ -1,0 +1,8 @@
+.LoginScreen {
+    /* display: flex; */
+}
+
+.LoginFormContainer {
+    margin: auto;
+    max-width: 800px;
+}
