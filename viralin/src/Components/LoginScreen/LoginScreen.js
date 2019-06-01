@@ -27,6 +27,7 @@ class LoginScreen extends React.Component {
     this.changeTabValue = this.changeTabValue.bind(this);
     this.changeUsernameValue = this.changeUsernameValue.bind(this);
     this.changePasswordValue = this.changePasswordValue.bind(this);
+    this.loginButtonClickHandler = this.loginButtonClickHandler.bind(this);
   }
 
   changeTabValue(event, newValue) {
@@ -39,6 +40,16 @@ class LoginScreen extends React.Component {
 
   changePasswordValue(event) {
     this.setState({ password: event.target.value });
+  }
+
+  loginButtonClickHandler() {
+    const { username, password, tabValue } = this.state;
+    console.log('Login button click handler called!');
+    if (tabValue !== 2) {
+      console.log(`Username : ${username}`);
+    }
+    console.log(`Password : ${password}`);
+    console.log(`Tab Value : ${tabValue}`);
   }
 
   render() {
@@ -96,7 +107,12 @@ class LoginScreen extends React.Component {
                     value={password}
                     onChange={this.changePasswordValue}
                   />
-                  <Button variant="contained" color="primary" className="Button">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    className="Button"
+                    onClick={this.loginButtonClickHandler}
+                  >
                     <Typography variant="subtitle1">Login</Typography>
                   </Button>
                   {
