@@ -59,34 +59,34 @@ class LoginScreen extends React.Component {
                                     <Tab label="Akun Admin" />
                                 </Tabs>
                                 <TabContainer>
-                                <TextField
-                                        id="filled-username"
-                                        label="Username"
-                                        className="TextField"
-                                        margin="normal"
-                                        variant="filled"
-                                        fullWidth
-                                        onChange={this.changeUsernameValue}
-                                    />
-                                <TextField
-                                        id="filled-password"
-                                        label="Password"
-                                        className="TextField"
-                                        margin="normal"
-                                        variant="filled"
-                                        type="password"
-                                        fullWidth
-                                        onChange={this.changeUsernameValue}
-                                    />
-                                </TabContainer>
-                                {this.state.tabValue === 0 && <TabContainer>
-                                    Item one
-                                </TabContainer>}
-                                {this.state.tabValue === 1 && <TabContainer>
-                                    Itesm Two
-                                </TabContainer>}
-                                {this.state.tabValue === 2 && <TabContainer>
-                                    Itesm Three
+                                    {(this.state.tabValue === 0 || this.state.tabValue === 1) &&  <TextField
+                                            id="filled-username"
+                                            label="Username"
+                                            className="TextField"
+                                            margin="normal"
+                                            variant="filled"
+                                            fullWidth
+                                            onChange={this.changeUsernameValue}
+                                    />}
+                                    <TextField
+                                            id="filled-password"
+                                            label="Password"
+                                            className="TextField"
+                                            margin="normal"
+                                            variant="filled"
+                                            type="password"
+                                            fullWidth
+                                            onChange={this.changeUsernameValue}
+                                        />
+                                    </TabContainer>
+                                    {this.state.tabValue === 0 && <TabContainer>
+                                        Item one
+                                    </TabContainer>}
+                                    {this.state.tabValue === 1 && <TabContainer>
+                                        Itesm Two
+                                    </TabContainer>}
+                                    {this.state.tabValue === 2 && <TabContainer>
+                                        Itesm Three
                                 </TabContainer>}
                             </Paper>            
                         </Container>
