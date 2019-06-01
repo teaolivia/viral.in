@@ -1,5 +1,6 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-var path = require('path');
+/* eslint-disable import/no-extraneous-dependencies */
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+
 const MODULE_PATHS = ['./node_modules', './src'];
 
 module.exports = {
@@ -9,43 +10,43 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader"
-          }
-        ]
+            loader: 'html-loader',
+          },
+        ],
       },
       {
         test: /\.css$/,
-        loader: 'style-loader'
+        loader: 'style-loader',
       }, {
         test: /\.css$/,
         loader: 'css-loader',
         query: {
           modules: true,
-          localIdentName: '[name]'
-        }
-      }
-    ]
+          localIdentName: '[name]',
+        },
+      },
+    ],
   },
   resolve: {
     modules: MODULE_PATHS,
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
   devServer: {
     historyApiFallback: true,
     contentBase: './',
-    hot: true
+    hot: true,
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./public/index.html",
-      filename: "./index.html"
-    }) 
-  ]
+      template: './public/index.html',
+      filename: './index.html',
+    }),
+  ],
 };
