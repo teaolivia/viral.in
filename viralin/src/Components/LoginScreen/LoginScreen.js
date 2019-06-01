@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 import './LoginScreen.css';
 
@@ -77,17 +78,21 @@ class LoginScreen extends React.Component {
                                             type="password"
                                             fullWidth
                                             onChange={this.changeUsernameValue}
-                                        />
-                                    </TabContainer>
-                                    {this.state.tabValue === 0 && <TabContainer>
-                                        Item one
-                                    </TabContainer>}
-                                    {this.state.tabValue === 1 && <TabContainer>
-                                        Itesm Two
-                                    </TabContainer>}
-                                    {this.state.tabValue === 2 && <TabContainer>
-                                        Itesm Three
+                                    />
+                                    <Button variant="contained" color="primary" className="Button">
+                                        Login
+                                    </Button>
+                                </TabContainer>
+                                {this.state.tabValue === 0 && <TabContainer>
+                                    Item one
                                 </TabContainer>}
+                                {this.state.tabValue === 1 && <TabContainer>
+                                    Itesm Two
+                                </TabContainer>}
+                                {this.state.tabValue === 2 && <TabContainer>
+                                    Itesm Three
+                                </TabContainer>}
+                                
                             </Paper>            
                         </Container>
                     </Grid>
