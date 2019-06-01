@@ -40,7 +40,7 @@ class LoginScreen extends React.Component {
                     </Grid>
                     <Grid item xs={12}><br /></Grid>
                     <Grid item xs={3}></Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={6}>
                         <Container>
                             <Paper className = "Paper">
                                 <Tabs value={this.state.value} onChange={this.handleChange}>
@@ -62,6 +62,9 @@ class LoginScreen extends React.Component {
                                 </TabContainer>}
                                 {this.state.value === 1 && <TabContainer>
                                     Itesm Two
+                                </TabContainer>}
+                                {this.state.value === 2 && <TabContainer>
+                                    Itesm Three
                                 </TabContainer>}
                             </Paper>            
                         </Container>
