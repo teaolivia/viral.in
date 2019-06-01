@@ -4,9 +4,11 @@ import Tab from '@material-ui/core/Tab';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Link from '@material-ui/core/Link';
 
 import './LoginScreen.css';
 
@@ -80,17 +82,20 @@ class LoginScreen extends React.Component {
                                             onChange={this.changeUsernameValue}
                                     />
                                     <Button variant="contained" color="primary" className="Button">
-                                        Login
+                                        <Typography variant="subtitle1">Login</Typography>
                                     </Button>
+                                    {(this.state.tabValue === 0 || this.state.tabValue === 1) &&                                      
+                                    <Box component="span">
+                                        <br />
+                                        <br />
+                                        <Link className="Button">Forgot Password?</Link>
+                                        &nbsp; | &nbsp; 
+                                        <Link className="Button">Register</Link>
+                                    </Box>
+                                    }
                                 </TabContainer>
-                                {this.state.tabValue === 0 && <TabContainer>
-                                    Item one
-                                </TabContainer>}
-                                {this.state.tabValue === 1 && <TabContainer>
+                                {(this.state.tabValue === 0 || this.state.tabValue === 1) && <TabContainer>
                                     Itesm Two
-                                </TabContainer>}
-                                {this.state.tabValue === 2 && <TabContainer>
-                                    Itesm Three
                                 </TabContainer>}
                                 
                             </Paper>            
