@@ -1,8 +1,10 @@
 
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import LoginScreen from "./LoginScreen"
 
 import './App.css';
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -13,9 +15,9 @@ class App extends Component {
   }
   render() {
     return (
-      <Router>
+      <Router>        
         <div className="App">
-          <p>Hello, world!</p>
+          <Route path="/" exact component={LoginScreen} />
         </div>
       </Router>      
     );
