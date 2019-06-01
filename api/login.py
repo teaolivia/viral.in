@@ -3,6 +3,18 @@ import os
 
 app = Flask(__name__)
 
+# @app.route("/", methods=['POST'])
+# def body():
+#     return nice_json({
+#         "uri": "/",
+#         "subresource_uris": {
+#             "sellers": "/sellers",
+#             "username": "/sellers/<userid>/<username>",
+#             "promotors": "/sellers/<userid>/promotors",
+#             "contents": "/sellers/<userid>/contents"
+#         }
+#     })
+
 @app.route('/')
 def home():
     return "Welcome!"
