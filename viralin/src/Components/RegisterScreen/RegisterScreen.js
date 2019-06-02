@@ -21,10 +21,16 @@ class LoginScreen extends React.Component {
       tabValue: 0,
     };
     this.changeTabValue = this.changeTabValue.bind(this);
+    this.registerButtonClickHandler = this.registerButtonClickHandler.bind(this);
   }
 
   changeTabValue(event, newValue) {
     this.setState({ tabValue: newValue });
+  }
+
+  registerButtonClickHandler() {
+    const { tabValue } = this.state;
+    console.log(`Register button click handler terpanggil, nilai tab: ${tabValue}`);
   }
 
   render() {
@@ -56,7 +62,12 @@ class LoginScreen extends React.Component {
                   <Tab label="Akun Promotor" />
                 </Tabs>
                 <TabContainer>
-                  <Button variant="contained" color="primary" className="Button">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    className="Button"
+                    onClick={this.registerButtonClickHandler}
+                  >
                     <Typography variant="subtitle1">Register</Typography>
                   </Button>
                 </TabContainer>
