@@ -5,7 +5,11 @@
         "email": "spongebob_squarepants@gmail.com",
         "phone": "+6281111111111",
         "city": "Bikini Bottom",
-        "province": "Pacific Ocean"
+        "province": "Pacific Ocean",
+        "seller_id": [
+            "1234",
+            "5678"
+        ]
     },
     "567": {
         "username": "flyingdutchman",
@@ -13,7 +17,8 @@
         "email": "flying_dutchman@gmail.com",
         "phone": "+6281111111112",
         "city": "Deep Sea",
-        "province": "Mariana"
+        "province": "Mariana",
+        "seller_id": "5678"
     },
     "890": {
         "username": "karatechop",
@@ -21,6 +26,7 @@
         "email": "sandy_cheeks@gmail.com",
         "phone": "+6281111111113",
         "city": "Bandung",
-        "province": "Jawa Barat"
+        "province": "Jawa Barat",
+        "seller_id": "1234"
     }
 }

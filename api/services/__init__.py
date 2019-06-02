@@ -1,32 +1,14 @@
 import os
+import json
+from flask import make_response
 
-from flask import Flask
+
+def root_dir():
+    """ Returns root director for this project """
+    return os.path.dirname(os.path.realpath(__file__ + '/..'))
 
 
-def create_app(test_config=None):
-    # create and configure the app
-    app = Flask(__name__, instance_relative_config=True)
-    app.config.from_mapping(
-        SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
-    )
-
-    if test_config is None:
-        # load the instance config, if it exists, when not testing
-        app.config.from_pyfile('config.py', silent=True)
-    else:
-        # load the test config if passed in
-        app.config.from_mapping(test_config)
-
-    # ensure the instance folder exists
-    try:
-        os.makedirs(app.instance_path)
-    except OSError:
-        pass
-
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
-
-    return app
+def nice_json(arg):
+    response = make_response(json.dumps(arg, sort_keys = True, indent=4))
+    response.headers['Content-type'] = "application/json"
+    return response

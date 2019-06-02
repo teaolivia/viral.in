@@ -1,4 +1,5 @@
 #!flask/bin/python
+from services import root_dir, nice_json
 from flask import Flask, jsonify
 import json
 import requests
@@ -7,8 +8,12 @@ app = Flask(__name__)
 
 with open("{}/database/sellers.json".format(root_dir()), "r") as f:
     sellers = json.load(f)
+with open("{}/database/promotors.json".format(root_dir()), "r") as f:
+    promotors = json.load(f)
+with open("{}/database/contents.json".format(root_dir()), "r") as f:
+    contents = json.load(f)
 
-@app.route("/", methods=['POST'])
+@app.route("/", methods=['GET'])
 def body():
     return nice_json({
         "uri": "/",
@@ -21,7 +26,7 @@ def body():
     })
 
 # basic getter route
-@app.route('/sellers', methods=['POST'])
+@app.route('/sellers', methods=['GET'])
 def get_sellers():
     return nice_json(sellers)
 
