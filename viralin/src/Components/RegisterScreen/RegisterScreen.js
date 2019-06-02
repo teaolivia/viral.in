@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { MoreVert } from '@material-ui/icons';
 
 import 'Components/RegisterScreen/RegisterScreen.css';
 
@@ -62,6 +63,8 @@ class LoginScreen extends React.Component {
                   <Tab label="Akun Promotor" />
                 </Tabs>
                 <TabContainer>
+                  <MoreVert />
+                  <br />
                   <Button
                     variant="contained"
                     color="primary"
