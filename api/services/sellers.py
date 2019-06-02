@@ -39,6 +39,16 @@ def get_sellers_promotors():
 def get_sellers_contents():
     return nice_json(sellers[contents])
 
+# counter which is displayed on dashboards
+def count_active_contents():
+    return 2
+
+def count_total_contents():
+    return float('inf')
+
+def count_referrals():
+    return 2
+
 # main driver
 if __name__ == '__main__':
     app.run(debug=True)
