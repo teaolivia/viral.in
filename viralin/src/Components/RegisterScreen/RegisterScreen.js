@@ -8,8 +8,6 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import { MoreVert } from '@material-ui/icons';
 
 import 'Components/RegisterScreen/RegisterScreen.css';
 
@@ -65,16 +63,6 @@ class RegisterScreen extends React.Component {
                 </Tabs>
                 <TabContainer>
                   { tabValue === 0 && <RegisterSellerForm /> }
-                  <MoreVert />
-                  <br />
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    className="Button"
-                    onClick={this.registerButtonClickHandler}
-                  >
-                    <Typography variant="subtitle1">Register</Typography>
-                  </Button>
                 </TabContainer>
               </Paper>
               <Typography variant="subtitle1">
