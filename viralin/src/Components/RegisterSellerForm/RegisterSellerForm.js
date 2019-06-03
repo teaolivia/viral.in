@@ -14,24 +14,29 @@ class RegisterSellerForm extends React.Component {
       submittedNamaUsaha: '',
       jenisUsaha: '',
       submittedJenisUsaha: '',
+      namaPebisnis: '',
+      submittedNamaPebisnis: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.changeNamaUsahaValue = this.changeNamaUsahaValue.bind(this);
     this.changeJenisUsahaValue = this.changeJenisUsahaValue.bind(this);
+    this.changeNamaPebisnisValue = this.changeNamaPebisnisValue.bind(this);
   }
 
   componentDidUpdate() {
-    const { submittedNamaUsaha, submittedJenisUsaha } = this.state;
+    const { submittedNamaUsaha, submittedJenisUsaha, submittedNamaPebisnis } = this.state;
     console.log(`Nama Usaha: ${submittedNamaUsaha}`);
     console.log(`Jenis Usaha: ${submittedJenisUsaha}`);
+    console.log(`Nama Usaha: ${submittedNamaPebisnis}`);
   }
 
   handleSubmit(event) {
-    const { namaUsaha, jenisUsaha } = this.state;
+    const { namaUsaha, jenisUsaha, namaPebisnis } = this.state;
     event.preventDefault();
     this.setState({
       submittedNamaUsaha: namaUsaha,
       submittedJenisUsaha: jenisUsaha,
+      submittedNamaPebisnis: namaPebisnis,
     });
     console.log('form submitted');
   }
@@ -44,8 +49,12 @@ class RegisterSellerForm extends React.Component {
     this.setState({ jenisUsaha: event.target.value });
   }
 
+  changeNamaPebisnisValue(event) {
+    this.setState({ namaPebisnis: event.target.value });
+  }
+
   render() {
-    const { namaUsaha, jenisUsaha } = this.state;
+    const { namaUsaha, jenisUsaha, namaPebisnis } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -69,6 +78,16 @@ class RegisterSellerForm extends React.Component {
             fullWidth
             value={jenisUsaha}
             onChange={this.changeJenisUsahaValue}
+          />
+          <TextField
+            id="filled-namapebisnis"
+            label="Nama Pebisnis"
+            className="TextField"
+            margin="normal"
+            variant="filled"
+            fullWidth
+            value={namaPebisnis}
+            onChange={this.changeNamaPebisnisValue}
           />
           <Button
             variant="contained"
