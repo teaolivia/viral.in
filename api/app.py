@@ -1,4 +1,5 @@
 from flask import Flask, redirect, render_template, request, session, abort, url_for
+from werkzeug.security import generate_password_hash, check_password_hash
 # import api.services.sellers as sellers
 # import api.services.contents as contents
 # import api.services.promotors as promotors
@@ -50,6 +51,11 @@ if __name__ == '__main__':
 # def logout():
 #     session.pop('logged_in', None)
 #     return(redirect(url_for('home')))
+
+@app.route('/register', methods=['PUT'])
+def register():
+    if request.method == 'PUT'
+    
 
 # if __name__ == "__main__":
 #     app.secret_key = os.urandom(12)

@@ -46,13 +46,31 @@ def get_sellers_contents():
 
 # counter which is displayed on dashboards
 def count_active_contents():
-    return 2
+    count = 0
+    for i in contents:
+        if contents[i].status == "TRUE":
+            count += 1
+        else:
+            continue
+    return count
 
-def count_total_contents():
-    return float('inf')
+def count_total_contents(seller_id):
+    count = 0
+    for i in contents:
+        if contents[i] == seller_id:
+            count += 1
+        else:
+            continue
+    return count
 
-def count_referrals():
-    return 2
+def count_referrals(seller_id):
+    count = 0
+    for i in promotors:
+        if promotors[i].seller_id == seller_id:
+            count += 1
+        else:
+            continue
+    return count
 
 # main driver
 if __name__ == '__main__':
