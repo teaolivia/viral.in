@@ -8,14 +8,25 @@ class RegisterSellerForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      namaUsaha: '',
+      submittedNamaUsaha: '',
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    this.setState();
+    console.log('form submitted');
   }
 
   render() {
     return (
       <div>
-        <Typography variant="subtitle1">Registrasi Akun Bisnis</Typography>
+        <form onSubmit={this.handleSubmit}>
+          <Typography variant="subtitle1">Registrasi Akun Bisnis</Typography>
+
+        </form>
       </div>
     );
   }
