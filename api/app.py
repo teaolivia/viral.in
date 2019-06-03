@@ -1,9 +1,9 @@
 from flask import Flask, redirect, render_template, request, session, abort, url_for
-from api.services.sellers import *
-from api.services.contents import *
-from api.services.promotors import *
+# import api.services.sellers as sellers
+# import api.services.contents as contents
+# import api.services.promotors as promotors
 import os
-from services import root_dir, nice_json
+# from services import root_dir, nice_json
 from flask import Flask, jsonify
 import json
 import requests
@@ -29,9 +29,8 @@ app = Flask(__name__)
 def hello_world():
     return 'This is for test'
 
-list_of_sellers = sellers.get_sellers()
-print(list_of_sellers)
-
+if __name__ == '__main__':
+    app.run(debug=True)
 
 # @app.route('/')
 # def home():
