@@ -37,7 +37,7 @@ if __name__ == '__main__':
 # def home():
 #     return "Welcome!"
 
-# @app.route('/login', methods=['GET', 'POST'])
+# @app.route('/login', methods=['POST'])
 # def login():
 #     error = None
 #     if request.method == 'POST':
@@ -52,9 +52,10 @@ if __name__ == '__main__':
 #     session.pop('logged_in', None)
 #     return(redirect(url_for('home')))
 
-@app.route('/register', methods=['PUT'])
+@app.route('/register', methods=['POST'])
 def register():
-    if request.method == 'PUT'
+    if request.method == 'POST':
+        
     
 
 # if __name__ == "__main__":
