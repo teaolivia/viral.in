@@ -14,8 +14,9 @@ import { MoreVert } from '@material-ui/icons';
 import 'Components/RegisterScreen/RegisterScreen.css';
 
 import TabContainer from 'Components/TabContainer/TabContainer';
+import RegisterSellerForm from 'Components/RegisterSellerForm/RegisterSellerForm';
 
-class LoginScreen extends React.Component {
+class RegisterScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -63,6 +64,7 @@ class LoginScreen extends React.Component {
                   <Tab label="Akun Promotor" />
                 </Tabs>
                 <TabContainer>
+                  { tabValue === 0 && <RegisterSellerForm /> }
                   <MoreVert />
                   <br />
                   <Button
@@ -88,4 +90,4 @@ class LoginScreen extends React.Component {
   }
 }
 
-export default LoginScreen;
+export default RegisterScreen;
