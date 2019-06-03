@@ -12,33 +12,40 @@ class RegisterSellerForm extends React.Component {
     this.state = {
       namaUsaha: '',
       submittedNamaUsaha: '',
+      jenisUsaha: '',
+      submittedJenisUsaha: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.changeNamaUsahaValue = this.changeNamaUsahaValue.bind(this);
-    this.printSumbmitted = this.printSubmitted.bind(this);
+    this.changeJenisUsahaValue = this.changeJenisUsahaValue.bind(this);
   }
 
-  printSubmitted() {
-    const { submittedNamaUsaha } = this.state;
+  componentDidUpdate() {
+    const { submittedNamaUsaha, submittedJenisUsaha } = this.state;
     console.log(`Nama Usaha: ${submittedNamaUsaha}`);
+    console.log(`Jenis Usaha: ${submittedJenisUsaha}`);
   }
 
   handleSubmit(event) {
-    const { namaUsaha } = this.state;
+    const { namaUsaha, jenisUsaha } = this.state;
     event.preventDefault();
     this.setState({
       submittedNamaUsaha: namaUsaha,
+      submittedJenisUsaha: jenisUsaha,
     });
     console.log('form submitted');
-    this.printSubmitted();
   }
 
   changeNamaUsahaValue(event) {
     this.setState({ namaUsaha: event.target.value });
   }
 
+  changeJenisUsahaValue(event) {
+    this.setState({ jenisUsaha: event.target.value });
+  }
+
   render() {
-    const { namaUsaha } = this.state;
+    const { namaUsaha, jenisUsaha } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -52,6 +59,16 @@ class RegisterSellerForm extends React.Component {
             fullWidth
             value={namaUsaha}
             onChange={this.changeNamaUsahaValue}
+          />
+          <TextField
+            id="filled-jenisusaha"
+            label="Jenis Usaha"
+            className="TextField"
+            margin="normal"
+            variant="filled"
+            fullWidth
+            value={jenisUsaha}
+            onChange={this.changeJenisUsahaValue}
           />
           <Button
             variant="contained"
