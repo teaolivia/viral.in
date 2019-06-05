@@ -98,8 +98,9 @@ class RegisterSellerForm extends React.Component {
       submittedTempatLahir: tempatLahir,
       submittedProvinsi: provinsi,
       submittedKabupatenKota: kabupatenKota,
+    }, () => {
+      console.log('form submitted');
     });
-    console.log('form submitted');
   }
 
   changeNamaUsahaValue(event) {
