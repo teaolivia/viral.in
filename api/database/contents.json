@@ -15,7 +15,7 @@
             "title": "Ayam Geprek Hot",
             "status": "TRUE",
             "isReferral": "TRUE",
-            "content_type": "kuota",
+            "content_type": "makanan",
             "duration_start": "02/03/2019",
             "duration_end": "20/03/2019",
             "type": "fisik",
@@ -23,48 +23,39 @@
             "games_rule": "Ayam Geprek super pedas enak mantap gurih!!!"
         },
         "3": {
-            "title": "Indihome Paket Gamer",
-            "status": "TRUE",
-            "isReferral": "TRUE",
-            "content_type": "kuota",
+            "title": "Buy 1 Get 1",
+            "status": "FALSE",
+            "isReferral": "FALSE",
+            "content_type": "barang",
             "duration_start": "01/01/2019",
             "duration_end": "01/02/2019",
-            "type": [
-                "fisik",
-                "digital"
-            ],
+            "type": "fisik",
             "asset": 999999,
-            "games_rule": "Spotlight uh, Moonlight uh, X got shot at a stoplight uh"
+            "games_rule": "Tori tori tori tori cheese crackers"
         }
     },
     "5678": {
         "4": {
-            "title": "Indihome Paket Gamer",
+            "title": "Diskon 50%",
             "status": "TRUE",
-            "isReferral": "TRUE",
-            "content_type": "kuota",
-            "duration_start": "01/01/2019",
-            "duration_end": "01/02/2019",
-            "type": [
-                "fisik",
-                "digital"
-            ],
+            "isReferral": "FALSE",
+            "content_type": "barang",
+            "duration_start": "01/04/2019",
+            "duration_end": "30/04/2019",
+            "type": "fisik",
             "asset": 999999,
-            "games_rule": "Spotlight uh, Moonlight uh, X got shot at a stoplight uh"
+            "games_rule": "makin lama makin asyik!"
         },
         "5": {
-            "title": "Indihome Paket Gamer",
+            "title": "Transfer Pulsa Bawa Berkah <3",
             "status": "TRUE",
             "isReferral": "TRUE",
             "content_type": "kuota",
-            "duration_start": "01/01/2019",
-            "duration_end": "01/02/2019",
-            "type": [
-                "fisik",
-                "digital"
-            ],
+            "duration_start": "05/05/2019",
+            "duration_end": "05/06/2019",
+            "type": "digital",
             "asset": 999999,
-            "games_rule": "Spotlight uh, Moonlight uh, X got shot at a stoplight uh"
+            "games_rule": "Berbagi berkah di bulan puasa :3"
         }
     }
 }
