@@ -9,6 +9,7 @@ import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import FilledInput from '@material-ui/core/FilledInput';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 import fetchProvinsiApi from 'Api/fetchProvinsiApi';
 import fetchKabupatenKotaApi from 'Api/fetchKabupatenKotaApi';
@@ -251,6 +252,9 @@ class RegisterSellerForm extends React.Component {
             className="TextField"
             InputLabelProps={{
               shrink: true,
+            }}
+            InputProps={{
+              startAdornment: <InputAdornment position="start">+62</InputAdornment>,
             }}
             margin="normal"
             variant="filled"
