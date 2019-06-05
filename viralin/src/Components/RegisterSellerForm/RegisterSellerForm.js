@@ -11,6 +11,7 @@ import Select from '@material-ui/core/Select';
 import FilledInput from '@material-ui/core/FilledInput';
 
 import fetchProvinsiApi from 'Api/fetchProvinsiApi';
+import fetchKabupatenKotaApi from 'Api/fetchKabupatenKotaApi';
 
 class RegisterSellerForm extends React.Component {
   constructor(props) {
@@ -25,13 +26,20 @@ class RegisterSellerForm extends React.Component {
       isProvinsiLoaded: false,
       provinsiArray: [],
       provinsi: '',
+      provinsiValue: 0,
       submittedProvinsi: '',
+      isKabupatenKotaLoaded: false,
+      kabupatenKotaArray: [],
+      kabupatenKota: '',
+      kabupatenKotaValue: 0,
+      submittedKabupatenKota: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.changeNamaUsahaValue = this.changeNamaUsahaValue.bind(this);
     this.changeJenisUsahaValue = this.changeJenisUsahaValue.bind(this);
     this.changeNamaPebisnisValue = this.changeNamaPebisnisValue.bind(this);
     this.changeProvinsiValue = this.changeProvinsiValue.bind(this);
+    this.changeKabupatenKotaValue = this.changeKabupatenKotaValue.bind(this);
   }
 
   componentDidMount() {
@@ -44,11 +52,13 @@ class RegisterSellerForm extends React.Component {
       submittedJenisUsaha,
       submittedNamaPebisnis,
       submittedProvinsi,
+      submittedKabupatenKota,
     } = this.state;
     console.log(`Nama Usaha: ${submittedNamaUsaha}`);
     console.log(`Jenis Usaha: ${submittedJenisUsaha}`);
     console.log(`Nama Usaha: ${submittedNamaPebisnis}`);
-    console.log(`Provsinsi Alamat: ${submittedProvinsi}`);
+    console.log(`Provinsi Alamat: ${submittedProvinsi}`);
+    console.log(`Kabupaten/Kota Alamat: ${submittedKabupatenKota}`);
   }
 
   handleSubmit(event) {
@@ -57,6 +67,7 @@ class RegisterSellerForm extends React.Component {
       jenisUsaha,
       namaPebisnis,
       provinsi,
+      kabupatenKota,
     } = this.state;
     event.preventDefault();
     this.setState({
@@ -64,6 +75,7 @@ class RegisterSellerForm extends React.Component {
       submittedJenisUsaha: jenisUsaha,
       submittedNamaPebisnis: namaPebisnis,
       submittedProvinsi: provinsi,
+      submittedKabupatenKota: kabupatenKota,
     });
     console.log('form submitted');
   }
@@ -81,7 +93,19 @@ class RegisterSellerForm extends React.Component {
   }
 
   changeProvinsiValue(event) {
-    this.setState({ provinsi: event.target.value });
+    // event.target.options[event.target.selectedIndex].text
+    this.fetchKabupatenKota(event.target.value);
+    this.setState({
+      provinsi: event.target.options[event.target.selectedIndex].text,
+      provinsiValue: event.target.value,
+    });
+  }
+
+  changeKabupatenKotaValue(event) {
+    this.setState({
+      kabupatenKota: event.target.options[event.target.selectedIndex].text,
+      kabupatenKotaValue: event.target.value,
+    });
   }
 
   fetchProvinsi() {
@@ -101,16 +125,39 @@ class RegisterSellerForm extends React.Component {
     );
   }
 
+  fetchKabupatenKota(id) {
+    const data = fetchKabupatenKotaApi(id);
+    data.then(
+      (result) => {
+        this.setState({
+          isKabupatenKotaLoaded: true,
+        });
+        if (!result.error) {
+          this.setState({ kabupatenKotaArray: result.kabupatens });
+        }
+      },
+      (error) => {
+        console.log(error);
+      },
+    );
+  }
+
   render() {
     const {
       namaUsaha,
       jenisUsaha,
       namaPebisnis,
       isProvinsiLoaded,
-      provinsi,
+      provinsiValue,
       provinsiArray,
+      isKabupatenKotaLoaded,
+      kabupatenKotaValue,
+      kabupatenKotaArray,
     } = this.state;
     const provinsis = provinsiArray.map(i => <option key={i.id} value={i.id}>{i.nama}</option>);
+    const kabupatenKotas = kabupatenKotaArray.map(
+      i => <option key={i.id} value={i.id}>{i.nama}</option>,
+    );
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -151,12 +198,27 @@ class RegisterSellerForm extends React.Component {
               <InputLabel htmlFor="filled-provinsi-native-simple">Provinsi</InputLabel>
               <Select
                 native
-                value={provinsi}
+                value={provinsiValue}
                 onChange={this.changeProvinsiValue}
                 input={<FilledInput name="age" id="filled-age-native-simple" />}
               >
                 <option value="" />
                 { provinsis }
+              </Select>
+            </FormControl>
+          )}
+          { isKabupatenKotaLoaded
+          && (
+            <FormControl className="FormControl" variant="filled" fullWidth>
+              <InputLabel htmlFor="filled-provinsi-native-simple">Kabupaten / Kota</InputLabel>
+              <Select
+                native
+                value={kabupatenKotaValue}
+                onChange={this.changeKabupatenKotaValue}
+                input={<FilledInput name="age" id="filled-age-native-simple" />}
+              >
+                <option value="" />
+                { kabupatenKotas }
               </Select>
             </FormControl>
           )}
