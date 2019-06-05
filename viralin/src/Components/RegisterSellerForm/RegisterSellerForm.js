@@ -25,6 +25,8 @@ class RegisterSellerForm extends React.Component {
       submittedNamaPebisnis: '',
       email: '',
       submittedEmail: '',
+      nomorTelepon: '',
+      submittedNomorTelepon: '',
       isProvinsiLoaded: false,
       provinsiArray: [],
       provinsi: '',
@@ -41,6 +43,7 @@ class RegisterSellerForm extends React.Component {
     this.changeJenisUsahaValue = this.changeJenisUsahaValue.bind(this);
     this.changeNamaPebisnisValue = this.changeNamaPebisnisValue.bind(this);
     this.changeEmailValue = this.changeEmailValue.bind(this);
+    this.changeNomorTeleponValue = this.changeNomorTeleponValue.bind(this);
     this.changeProvinsiValue = this.changeProvinsiValue.bind(this);
     this.changeKabupatenKotaValue = this.changeKabupatenKotaValue.bind(this);
   }
@@ -55,13 +58,15 @@ class RegisterSellerForm extends React.Component {
       submittedJenisUsaha,
       submittedNamaPebisnis,
       submittedEmail,
+      submittedNomorTelepon,
       submittedProvinsi,
       submittedKabupatenKota,
     } = this.state;
     console.log(`Nama Usaha: ${submittedNamaUsaha}`);
     console.log(`Jenis Usaha: ${submittedJenisUsaha}`);
     console.log(`Nama Usaha: ${submittedNamaPebisnis}`);
-    console.log(`Nama Email: ${submittedEmail}`);
+    console.log(`Email: ${submittedEmail}`);
+    console.log(`Nomor Telepon: ${submittedNomorTelepon}`);
     console.log(`Provinsi Alamat: ${submittedProvinsi}`);
     console.log(`Kabupaten/Kota Alamat: ${submittedKabupatenKota}`);
   }
@@ -72,6 +77,7 @@ class RegisterSellerForm extends React.Component {
       jenisUsaha,
       namaPebisnis,
       email,
+      nomorTelepon,
       provinsi,
       kabupatenKota,
     } = this.state;
@@ -81,6 +87,7 @@ class RegisterSellerForm extends React.Component {
       submittedJenisUsaha: jenisUsaha,
       submittedNamaPebisnis: namaPebisnis,
       submittedEmail: email,
+      submittedNomorTelepon: nomorTelepon,
       submittedProvinsi: provinsi,
       submittedKabupatenKota: kabupatenKota,      
     });
@@ -101,6 +108,10 @@ class RegisterSellerForm extends React.Component {
 
   changeEmailValue(event) {
     this.setState({ email: event.target.value });
+  }
+
+  changeNomorTeleponValue(event) {
+    this.setState({ nomorTelepon: event.target.value });
   }
 
   changeProvinsiValue(event) {
@@ -159,6 +170,7 @@ class RegisterSellerForm extends React.Component {
       jenisUsaha,
       namaPebisnis,
       email,
+      nomorTelepon,
       isProvinsiLoaded,
       provinsiValue,
       provinsiArray,
@@ -216,6 +228,20 @@ class RegisterSellerForm extends React.Component {
             fullWidth
             value={email}
             onChange={this.changeEmailValue}
+          />
+          <TextField
+            id="filled-nomorTelepon"
+            label="Nomor Telepon"
+            fullWidth
+            value={nomorTelepon}
+            onChange={this.changeNomorTeleponValue}
+            type="number"
+            className="TextField"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            margin="normal"
+            variant="filled"
           />
           { isProvinsiLoaded
           && (
