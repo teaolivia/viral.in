@@ -4,11 +4,5 @@ const fetchProvinsiApi = fetch(proxyUrl + targetUrl, {
   crossDomain: true,
   method: 'GET',
 })
-  .then(res => res.json())
-  .then(
-    result => result,
-    (error) => {
-      console.log(error);
-    },
-  );
+  .then(res => res.json());
 export default fetchProvinsiApi;
