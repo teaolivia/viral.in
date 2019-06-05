@@ -21,8 +21,16 @@ class User(object):
     def set_password(self, password):
         self.pw_hash = generate_password_hash(password)
 
-    def check_password(self, password):
+    def check_password(self, password) -> str:
         return check_password_hash(self.pw_hash, password)
+
+    def register(self, username, password):
+        phash = self.password
+        self.set_password(password)
+
+    def login(self, username, password):
+        p_hash = self.password
+        if check_password
 
 api.add_resource(User, '/user')
 
