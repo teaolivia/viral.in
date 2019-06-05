@@ -19,30 +19,9 @@ class RegisterScreen extends React.Component {
     super(props);
     this.state = {
       tabValue: 0,
-      provinsi: [],
     };
     this.changeTabValue = this.changeTabValue.bind(this);
     this.registerButtonClickHandler = this.registerButtonClickHandler.bind(this);
-  }
-
-  componentDidMount() {
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    const targetUrl = 'https://dev.farizdotid.com/api/daerahindonesia/provinsi';
-    fetch(proxyUrl + targetUrl, {
-      crossDomain: true,
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(
-        (result) => {
-          if (!result.error) {
-            this.setState({ provinsi: result.semuaprovinsi });
-          }
-        },
-        (error) => {
-          console.log(error);
-        },
-      );
   }
 
   changeTabValue(event, newValue) {
@@ -55,7 +34,7 @@ class RegisterScreen extends React.Component {
   }
 
   render() {
-    const { tabValue, provinsi } = this.state;
+    const { tabValue } = this.state;
     return (
       <div className="LoginScreen">
         <Grid
@@ -83,7 +62,9 @@ class RegisterScreen extends React.Component {
                   <Tab label="Akun Promotor" />
                 </Tabs>
                 <TabContainer>
-                  { tabValue === 0 && <RegisterSellerForm provinsi={provinsi} /> }
+                  { tabValue === 0
+                  && <RegisterSellerForm />
+                  }
                 </TabContainer>
               </Paper>
               <Typography variant="subtitle1">
