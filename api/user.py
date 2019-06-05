@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Blueprint, Flask
 from flask_restful import Resource, Api
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -30,7 +30,7 @@ class User(object):
 
     def login(self, username, password):
         p_hash = self.password
-        if check_password
+        if check_password:
 
 api.add_resource(User, '/user')
 

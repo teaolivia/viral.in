@@ -1,5 +1,5 @@
 #!flask/bin/python
-from services import root_dir, nice_json
+from services import Blueprint, root_dir, nice_json
 from flask import Flask, jsonify
 import json
 import requests
@@ -14,8 +14,6 @@ class Promotors(User):
     def __init__(self, id, username, password):
         self.__init__(self, username,password)
         self.id = promotor_id
-
-
 
 # main driver
 if __name__ == '__main__':
