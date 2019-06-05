@@ -30,6 +30,8 @@ class RegisterSellerForm extends React.Component {
       submittedNomorTelepon: '',
       tempatLahir: '',
       submittedTempatLahir: '',
+      tanggalLahir: '',
+      submittedTanggalLahir: '',
       isLoadingProvinsi: false,
       isProvinsiLoaded: false,
       provinsiArray: [],
@@ -50,6 +52,7 @@ class RegisterSellerForm extends React.Component {
     this.changeEmailValue = this.changeEmailValue.bind(this);
     this.changeNomorTeleponValue = this.changeNomorTeleponValue.bind(this);
     this.changeTempatLahirValue = this.changeTempatLahirValue.bind(this);
+    this.changeTanggalLahirValue = this.changeTanggalLahirValue.bind(this);
     this.changeProvinsiValue = this.changeProvinsiValue.bind(this);
     this.changeKabupatenKotaValue = this.changeKabupatenKotaValue.bind(this);
   }
@@ -66,6 +69,7 @@ class RegisterSellerForm extends React.Component {
       submittedEmail,
       submittedNomorTelepon,
       submittedTempatLahir,
+      submittedTanggalLahir,
       submittedProvinsi,
       submittedKabupatenKota,
     } = this.state;
@@ -75,6 +79,7 @@ class RegisterSellerForm extends React.Component {
     console.log(`Email: ${submittedEmail}`);
     console.log(`Nomor Telepon: ${submittedNomorTelepon}`);
     console.log(`Tempat Lahir: ${submittedTempatLahir}`);
+    console.log(`Tanggal Lahir: ${submittedTanggalLahir}`);
     console.log(`Provinsi Alamat: ${submittedProvinsi}`);
     console.log(`Kabupaten/Kota Alamat: ${submittedKabupatenKota}`);
   }
@@ -87,6 +92,7 @@ class RegisterSellerForm extends React.Component {
       email,
       nomorTelepon,
       tempatLahir,
+      tanggalLahir,
       provinsi,
       kabupatenKota,
     } = this.state;
@@ -98,6 +104,7 @@ class RegisterSellerForm extends React.Component {
       submittedEmail: email,
       submittedNomorTelepon: nomorTelepon,
       submittedTempatLahir: tempatLahir,
+      submittedTanggalLahir: tanggalLahir,
       submittedProvinsi: provinsi,
       submittedKabupatenKota: kabupatenKota,
     }, () => {
@@ -127,6 +134,10 @@ class RegisterSellerForm extends React.Component {
 
   changeTempatLahirValue(event) {
     this.setState({ tempatLahir: event.target.value });
+  }
+
+  changeTanggalLahirValue(event) {
+    this.setState({ tanggalLahir: event.target.value });
   }
 
   changeProvinsiValue(event) {
@@ -189,6 +200,7 @@ class RegisterSellerForm extends React.Component {
       email,
       nomorTelepon,
       tempatLahir,
+      tanggalLahir,
       isLoadingProvinsi,
       isProvinsiLoaded,
       provinsiValue,
@@ -275,6 +287,20 @@ class RegisterSellerForm extends React.Component {
             fullWidth
             value={tempatLahir}
             onChange={this.changeTempatLahirValue}
+          />
+          <TextField
+            id="filledtanggallahir"
+            label="Tanggal Lahir"
+            type="date"
+            className="TextField"
+            margin="normal"
+            variant="filled"
+            fullWidth
+            InputLabelProps={{
+              shrink: true,
+            }}
+            value={tanggalLahir}
+            onChange={this.changeTanggalLahirValue}
           />
           { isLoadingProvinsi && <Typography>Mengambil data provinsi...</Typography> }
           { (isProvinsiLoaded && !isLoadingProvinsi)
