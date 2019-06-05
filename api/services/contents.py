@@ -11,8 +11,8 @@ class Contents(object):
     def __init__(self, id):
         self.content_id = id
 
-    def create_new_content(self, username):
-        return 2
+    def add_content(self, username):
+        pass
     
     def delete_content(self, username, content_id):
         pass
@@ -20,6 +20,16 @@ class Contents(object):
     def edit_content(self, username):
         pass
 
+    def toggle_active_content(self, username, content_id, stat):
+        if stat == True:
+            stat = False
+        else:
+            stat = True
+
+    def set_duration(self, username, content_id, start, end):
+        self.duration_start = start
+        self.duration_end = end
+    
 # main driver
 if __name__ == '__main__':
     app.run(port=5003,debug=True)

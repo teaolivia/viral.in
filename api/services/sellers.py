@@ -1,4 +1,5 @@
 #!flask/bin/python
+from contents import add_contents
 from services import root_dir, nice_json
 from flask import Flask, jsonify, request
 from flask_restful import Resource, Api
@@ -21,7 +22,15 @@ class Sellers(User):
         User.__init__(self, username, password)
         self.seller_id = id
     
+    def count_total_promotors(self, id, pro_id):
+        count = 0
+        for i in promotors:
+            if promotors.id[promotor_id] == pro_id:
+                count += 1
+        return count
     
+    def upload_profile_picture(self, id):
+        pass
 
 @app.route("/", methods=['GET'])
 def body():

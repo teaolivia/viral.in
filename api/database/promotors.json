@@ -13,7 +13,8 @@
         "seller_id": [
             "1234",
             "5678"
-        ]
+        ],
+        "level": "B"
     },
     "567": {
         "username": "flyingdutchman",
@@ -26,7 +27,8 @@
         "address": "VOC 2 No. 67",
         "city": "Surabaya",
         "province": "Jawa Timur",
-        "seller_id": "5678"
+        "seller_id": "5678",
+        "level": "A"
     },
     "890": {
         "username": "karatechop",
@@ -39,6 +41,7 @@
         "address": "Ir. H. Djuanda No. 48",
         "city": "Bandung",
         "province": "Jawa Barat",
-        "seller_id": "1234"
+        "seller_id": "1234",
+        "level": "S"
     }
 }
