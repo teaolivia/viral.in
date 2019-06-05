@@ -27,6 +27,8 @@ class RegisterSellerForm extends React.Component {
       submittedEmail: '',
       nomorTelepon: '',
       submittedNomorTelepon: '',
+      tempatLahir: '',
+      submittedTempatLahir: '',
       isProvinsiLoaded: false,
       provinsiArray: [],
       provinsi: '',
@@ -44,6 +46,7 @@ class RegisterSellerForm extends React.Component {
     this.changeNamaPebisnisValue = this.changeNamaPebisnisValue.bind(this);
     this.changeEmailValue = this.changeEmailValue.bind(this);
     this.changeNomorTeleponValue = this.changeNomorTeleponValue.bind(this);
+    this.changeTempatLahirValue = this.changeTempatLahirValue.bind(this);
     this.changeProvinsiValue = this.changeProvinsiValue.bind(this);
     this.changeKabupatenKotaValue = this.changeKabupatenKotaValue.bind(this);
   }
@@ -59,6 +62,7 @@ class RegisterSellerForm extends React.Component {
       submittedNamaPebisnis,
       submittedEmail,
       submittedNomorTelepon,
+      submittedTempatLahir,
       submittedProvinsi,
       submittedKabupatenKota,
     } = this.state;
@@ -67,6 +71,7 @@ class RegisterSellerForm extends React.Component {
     console.log(`Nama Usaha: ${submittedNamaPebisnis}`);
     console.log(`Email: ${submittedEmail}`);
     console.log(`Nomor Telepon: ${submittedNomorTelepon}`);
+    console.log(`Tempat Lahir: ${submittedTempatLahir}`);
     console.log(`Provinsi Alamat: ${submittedProvinsi}`);
     console.log(`Kabupaten/Kota Alamat: ${submittedKabupatenKota}`);
   }
@@ -78,6 +83,7 @@ class RegisterSellerForm extends React.Component {
       namaPebisnis,
       email,
       nomorTelepon,
+      tempatLahir,
       provinsi,
       kabupatenKota,
     } = this.state;
@@ -88,8 +94,9 @@ class RegisterSellerForm extends React.Component {
       submittedNamaPebisnis: namaPebisnis,
       submittedEmail: email,
       submittedNomorTelepon: nomorTelepon,
+      submittedTempatLahir: tempatLahir,
       submittedProvinsi: provinsi,
-      submittedKabupatenKota: kabupatenKota,      
+      submittedKabupatenKota: kabupatenKota,
     });
     console.log('form submitted');
   }
@@ -112,6 +119,10 @@ class RegisterSellerForm extends React.Component {
 
   changeNomorTeleponValue(event) {
     this.setState({ nomorTelepon: event.target.value });
+  }
+
+  changeTempatLahirValue(event) {
+    this.setState({ tempatLahir: event.target.value });
   }
 
   changeProvinsiValue(event) {
@@ -171,6 +182,7 @@ class RegisterSellerForm extends React.Component {
       namaPebisnis,
       email,
       nomorTelepon,
+      tempatLahir,
       isProvinsiLoaded,
       provinsiValue,
       provinsiArray,
@@ -242,6 +254,16 @@ class RegisterSellerForm extends React.Component {
             }}
             margin="normal"
             variant="filled"
+          />
+          <TextField
+            id="filled-tempatlahir"
+            label="Tempat Lahir"
+            className="TextField"
+            margin="normal"
+            variant="filled"
+            fullWidth
+            value={tempatLahir}
+            onChange={this.changeTempatLahirValue}
           />
           { isProvinsiLoaded
           && (
