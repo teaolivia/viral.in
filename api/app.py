@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, session, abort, url_for
+from flask import Flask, redirect, render_template, request, session, abort, url_for, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
 # import api.services.sellers as sellers
 # import api.services.contents as contents
@@ -8,6 +8,7 @@ import os
 from flask import Flask, jsonify
 import json
 import requests
+import user
 
 app = Flask(__name__)
 
@@ -22,10 +23,6 @@ app = Flask(__name__)
 #             "contents": "/sellers/<userid>/contents"
 #         }
 #     })
-
-from flask import Flask
-app = Flask(__name__)
-
 @app.route('/')
 def hello_world():
     return 'This is for test'
