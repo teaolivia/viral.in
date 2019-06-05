@@ -30,6 +30,7 @@ class RegisterSellerForm extends React.Component {
       submittedNomorTelepon: '',
       tempatLahir: '',
       submittedTempatLahir: '',
+      isLoadingProvinsi: false,
       isProvinsiLoaded: false,
       provinsiArray: [],
       provinsi: '',
@@ -145,6 +146,7 @@ class RegisterSellerForm extends React.Component {
   }
 
   fetchProvinsi() {
+    this.setState({ isLoadingProvinsi: true });
     const data = fetchProvinsiApi;
     data.then(
       (result) => {
@@ -152,7 +154,7 @@ class RegisterSellerForm extends React.Component {
           isProvinsiLoaded: true,
         });
         if (!result.error) {
-          this.setState({ provinsiArray: result.semuaprovinsi });
+          this.setState({ provinsiArray: result.semuaprovinsi, isLoadingProvinsi: false });
         }
       },
       (error) => {
@@ -187,6 +189,7 @@ class RegisterSellerForm extends React.Component {
       email,
       nomorTelepon,
       tempatLahir,
+      isLoadingProvinsi,
       isProvinsiLoaded,
       provinsiValue,
       provinsiArray,
@@ -273,7 +276,8 @@ class RegisterSellerForm extends React.Component {
             value={tempatLahir}
             onChange={this.changeTempatLahirValue}
           />
-          { isProvinsiLoaded
+          { isLoadingProvinsi && <Typography>Mengambil data provinsi...</Typography> }
+          { (isProvinsiLoaded && !isLoadingProvinsi)
           && (
             <FormControl className="FormControl" variant="filled" fullWidth>
               <InputLabel htmlFor="filled-provinsi-native-simple">Provinsi</InputLabel>
