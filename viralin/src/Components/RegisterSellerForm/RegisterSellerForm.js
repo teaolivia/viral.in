@@ -35,6 +35,7 @@ class RegisterSellerForm extends React.Component {
       provinsi: '',
       provinsiValue: 0,
       submittedProvinsi: '',
+      isLoadingKabupatenKota: false,
       isKabupatenKotaLoaded: false,
       kabupatenKotaArray: [],
       kabupatenKota: '',
@@ -161,6 +162,7 @@ class RegisterSellerForm extends React.Component {
   }
 
   fetchKabupatenKota(id) {
+    this.setState({ isLoadingKabupatenKota: true });
     const data = fetchKabupatenKotaApi(id);
     data.then(
       (result) => {
@@ -168,7 +170,7 @@ class RegisterSellerForm extends React.Component {
           isKabupatenKotaLoaded: true,
         });
         if (!result.error) {
-          this.setState({ kabupatenKotaArray: result.kabupatens });
+          this.setState({ kabupatenKotaArray: result.kabupatens, isLoadingKabupatenKota: false });
         }
       },
       (error) => {
@@ -188,6 +190,7 @@ class RegisterSellerForm extends React.Component {
       isProvinsiLoaded,
       provinsiValue,
       provinsiArray,
+      isLoadingKabupatenKota,
       isKabupatenKotaLoaded,
       kabupatenKotaValue,
       kabupatenKotaArray,
@@ -285,7 +288,8 @@ class RegisterSellerForm extends React.Component {
               </Select>
             </FormControl>
           )}
-          { isKabupatenKotaLoaded
+          { isLoadingKabupatenKota && <Typography>Mengambil data kabupaten/kota...</Typography> }
+          { (isKabupatenKotaLoaded && !isLoadingKabupatenKota)
           && (
             <FormControl className="FormControl" variant="filled" fullWidth>
               <InputLabel htmlFor="filled-provinsi-native-simple">Kabupaten / Kota</InputLabel>
