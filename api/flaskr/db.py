@@ -1,5 +1,11 @@
 from flask import Flask
 from flask_dynamo import Dynamo
+import boto3
+
+dynamodb = boto3.resource('dynamodb')
+
+table = dynamodb.TableName('sellers')
+
 
 app = Flask(__name__)
 app.config['DYNAMO_TABLES'] = [

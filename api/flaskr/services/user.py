@@ -24,10 +24,6 @@ class User(object):
     def check_password(self, password) -> str:
         return check_password_hash(self.pw_hash, password)
 
-    def register(self, username, password):
-        phash = self.password
-        self.set_password(password)
-
     def upload_profile_picture(self, id):
         pass
 

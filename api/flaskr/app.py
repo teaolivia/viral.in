@@ -10,7 +10,7 @@ import json
 import requests
 import user
 
-app = Flask(__name__)
+from flaskr import app
 
 # @app.route("/", methods=['POST'])
 # def body():
