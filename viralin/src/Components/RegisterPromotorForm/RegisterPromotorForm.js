@@ -24,6 +24,8 @@ class RegisterPromotorForm extends React.Component {
       submittedEmail: '',
       facebook: '',
       submittedFacebook: '',
+      twitter: '',
+      submittedTwitter: '',
       nomorTelepon: '',
       submittedNomorTelepon: '',
       tempatLahir: '',
@@ -54,6 +56,7 @@ class RegisterPromotorForm extends React.Component {
     this.changeNamaPromotorValue = this.changeNamaPromotorValue.bind(this);
     this.changeEmailValue = this.changeEmailValue.bind(this);
     this.changeFacebookValue = this.changeFacebookValue.bind(this);
+    this.changeTwitterValue = this.changeTwitterValue.bind(this);
     this.changeNomorTeleponValue = this.changeNomorTeleponValue.bind(this);
     this.changeTempatLahirValue = this.changeTempatLahirValue.bind(this);
     this.changeTanggalLahirValue = this.changeTanggalLahirValue.bind(this);
@@ -74,6 +77,7 @@ class RegisterPromotorForm extends React.Component {
       submittedNamaPromotor,
       submittedEmail,
       submittedFacebook,
+      submittedTwitter,
       submittedNomorTelepon,
       submittedTempatLahir,
       submittedTanggalLahir,
@@ -86,6 +90,7 @@ class RegisterPromotorForm extends React.Component {
     console.log(`Nama Promotor: ${submittedNamaPromotor}`);
     console.log(`Email: ${submittedEmail}`);
     console.log(`Facebook: ${submittedFacebook}`);
+    console.log(`Twitter: ${submittedTwitter}`);
     console.log(`Nomor Telepon: ${submittedNomorTelepon}`);
     console.log(`Tempat Lahir: ${submittedTempatLahir}`);
     console.log(`Tanggal Lahir: ${submittedTanggalLahir}`);
@@ -101,6 +106,7 @@ class RegisterPromotorForm extends React.Component {
       namaPromotor,
       email,
       facebook,
+      twitter,
       nomorTelepon,
       tempatLahir,
       tanggalLahir,
@@ -117,6 +123,7 @@ class RegisterPromotorForm extends React.Component {
         submittedNamaPromotor: namaPromotor,
         submittedEmail: email,
         submittedFacebook: facebook,
+        submittedTwitter: twitter,
         submittedNomorTelepon: nomorTelepon,
         submittedTempatLahir: tempatLahir,
         submittedTanggalLahir: tanggalLahir,
@@ -143,6 +150,10 @@ class RegisterPromotorForm extends React.Component {
 
   changeFacebookValue(event) {
     this.setState({ facebook: event.target.value });
+  }
+
+  changeTwitterValue(event) {
+    this.setState({ twitter: event.target.value });
   }
 
   changeNomorTeleponValue(event) {
@@ -230,6 +241,7 @@ class RegisterPromotorForm extends React.Component {
       namaPromotor,
       email,
       facebook,
+      twitter,
       nomorTelepon,
       tempatLahir,
       tanggalLahir,
@@ -354,6 +366,23 @@ class RegisterPromotorForm extends React.Component {
             }}
             InputProps={{
               startAdornment: <InputAdornment position="start">https://www.facebook.com/</InputAdornment>,
+            }}
+            margin="normal"
+            variant="filled"
+          />
+          <TextField
+            id="filled-twitter"
+            label="Halaman Twitter"
+            fullWidth
+            value={twitter}
+            onChange={this.changeTwitterValue}
+            type="text"
+            className="TextField"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            InputProps={{
+              startAdornment: <InputAdornment position="start">@</InputAdornment>,
             }}
             margin="normal"
             variant="filled"
