@@ -394,6 +394,7 @@ class RegisterSellerForm extends React.Component {
             value={alamat}
             onChange={this.changeAlamatValue}
           />
+          <Typography variant="subtitle1">Informasi Akun</Typography>
           <TextField
             id="filled-username"
             label="Username"
