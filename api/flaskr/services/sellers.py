@@ -28,9 +28,6 @@ class Sellers(User):
             if promotors.id[promotor_id] == pro_id:
                 count += 1
         return count
-    
-    def upload_profile_picture(self, id):
-        pass
 
 @app.route("/", methods=['GET'])
 def body():
@@ -92,8 +89,8 @@ def count_referrals(seller_id):
     return count
 
 # all sellers' functions
-def make_new_contents(seller_id, content_id):
-    
+def make_new_contents(sellerId, contentId):
+    self.add_contents(username,sellerId)
 
 # main driver
 if __name__ == '__main__':

@@ -11,7 +11,7 @@ class Contents(object):
     def __init__(self, id):
         self.content_id = id
 
-    def add_content(self, username):
+    def add_content(self, sellerId):
         pass
     
     def delete_content(self, username, content_id):
@@ -29,6 +29,7 @@ class Contents(object):
     def set_duration(self, username, content_id, start, end):
         self.duration_start = start
         self.duration_end = end
+        return self.duration_end - self.duration_start
     
 # main driver
 if __name__ == '__main__':
