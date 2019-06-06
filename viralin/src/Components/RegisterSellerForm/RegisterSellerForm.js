@@ -296,6 +296,7 @@ class RegisterSellerForm extends React.Component {
             value={namaPebisnis}
             onChange={this.changeNamaPebisnisValue}
           />
+          <Typography variant="subtitle1">Informasi Kontak</Typography>
           <TextField
             id="filled-email-input"
             label="Email"
