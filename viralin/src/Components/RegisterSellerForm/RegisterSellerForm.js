@@ -327,6 +327,53 @@ class RegisterSellerForm extends React.Component {
             margin="normal"
             variant="filled"
           />
+          <TextField
+            id="filled-alamat"
+            label="Alamat Tinggal"
+            className="TextField"
+            margin="normal"
+            variant="filled"
+            fullWidth
+            value={alamat}
+            onChange={this.changeAlamatValue}
+          />
+          <br />
+          { isLoadingProvinsi && <Typography>Mengambil data provinsi...</Typography> }
+          { (isProvinsiLoaded && !isLoadingProvinsi)
+          && (
+            <FormControl className="FormControl" variant="filled" fullWidth>
+              <InputLabel htmlFor="filled-provinsi-native-simple">Provinsi Tempat Tinggal</InputLabel>
+              <Select
+                native
+                value={provinsiValue}
+                onChange={this.changeProvinsiValue}
+                input={<FilledInput name="age" id="filled-age-native-simple" />}
+              >
+                <option value="" />
+                { provinsis }
+              </Select>
+            </FormControl>
+          )}
+          <br />
+          <br />
+          { isLoadingKabupatenKota && <Typography>Mengambil data kabupaten/kota...</Typography> }
+          { (isKabupatenKotaLoaded && !isLoadingKabupatenKota)
+          && (
+            <FormControl className="FormControl" variant="filled" fullWidth>
+              <InputLabel htmlFor="filled-provinsi-native-simple">Kabupaten / Kota Tempat Tinggal</InputLabel>
+              <Select
+                native
+                value={kabupatenKotaValue}
+                onChange={this.changeKabupatenKotaValue}
+                input={<FilledInput name="age" id="filled-age-native-simple" />}
+              >
+                <option value="" />
+                { kabupatenKotas }
+              </Select>
+            </FormControl>
+          )}
+          <br />
+          <br />
           <Typography variant="subtitle1">Informasi Kelahiran</Typography>
           <TextField
             id="filled-tempatlahir"
@@ -351,49 +398,6 @@ class RegisterSellerForm extends React.Component {
             }}
             value={tanggalLahir}
             onChange={this.changeTanggalLahirValue}
-          />
-          <Typography variant="subtitle1">Informasi Tempat Tinggal</Typography>
-          { isLoadingProvinsi && <Typography>Mengambil data provinsi...</Typography> }
-          { (isProvinsiLoaded && !isLoadingProvinsi)
-          && (
-            <FormControl className="FormControl" variant="filled" fullWidth>
-              <InputLabel htmlFor="filled-provinsi-native-simple">Provinsi</InputLabel>
-              <Select
-                native
-                value={provinsiValue}
-                onChange={this.changeProvinsiValue}
-                input={<FilledInput name="age" id="filled-age-native-simple" />}
-              >
-                <option value="" />
-                { provinsis }
-              </Select>
-            </FormControl>
-          )}
-          { isLoadingKabupatenKota && <Typography>Mengambil data kabupaten/kota...</Typography> }
-          { (isKabupatenKotaLoaded && !isLoadingKabupatenKota)
-          && (
-            <FormControl className="FormControl" variant="filled" fullWidth>
-              <InputLabel htmlFor="filled-provinsi-native-simple">Kabupaten / Kota</InputLabel>
-              <Select
-                native
-                value={kabupatenKotaValue}
-                onChange={this.changeKabupatenKotaValue}
-                input={<FilledInput name="age" id="filled-age-native-simple" />}
-              >
-                <option value="" />
-                { kabupatenKotas }
-              </Select>
-            </FormControl>
-          )}
-          <TextField
-            id="filled-alamat"
-            label="Alamat Tinggal"
-            className="TextField"
-            margin="normal"
-            variant="filled"
-            fullWidth
-            value={alamat}
-            onChange={this.changeAlamatValue}
           />
           <Typography variant="subtitle1">Informasi Akun</Typography>
           <TextField
