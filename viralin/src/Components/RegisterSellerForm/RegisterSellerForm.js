@@ -44,6 +44,9 @@ class RegisterSellerForm extends React.Component {
       kabupatenKota: '',
       kabupatenKotaValue: 0,
       submittedKabupatenKota: '',
+      password: '',
+      passwordConfirmation: '',
+      submittedPassword: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.changeNamaUsahaValue = this.changeNamaUsahaValue.bind(this);
@@ -55,6 +58,8 @@ class RegisterSellerForm extends React.Component {
     this.changeTanggalLahirValue = this.changeTanggalLahirValue.bind(this);
     this.changeProvinsiValue = this.changeProvinsiValue.bind(this);
     this.changeKabupatenKotaValue = this.changeKabupatenKotaValue.bind(this);
+    this.changePasswordValue = this.changePasswordValue.bind(this);
+    this.changePasswordConfirmationValue = this.changePasswordConfirmationValue.bind(this);
   }
 
   componentDidMount() {
@@ -72,6 +77,7 @@ class RegisterSellerForm extends React.Component {
       submittedTanggalLahir,
       submittedProvinsi,
       submittedKabupatenKota,
+      submittedPassword,
     } = this.state;
     console.log(`Nama Usaha: ${submittedNamaUsaha}`);
     console.log(`Jenis Usaha: ${submittedJenisUsaha}`);
@@ -82,6 +88,7 @@ class RegisterSellerForm extends React.Component {
     console.log(`Tanggal Lahir: ${submittedTanggalLahir}`);
     console.log(`Provinsi Alamat: ${submittedProvinsi}`);
     console.log(`Kabupaten/Kota Alamat: ${submittedKabupatenKota}`);
+    console.log(`Password: ${submittedPassword}`);
   }
 
   handleSubmit(event) {
@@ -95,21 +102,28 @@ class RegisterSellerForm extends React.Component {
       tanggalLahir,
       provinsi,
       kabupatenKota,
+      password,
+      passwordConfirmation,
     } = this.state;
     event.preventDefault();
-    this.setState({
-      submittedNamaUsaha: namaUsaha,
-      submittedJenisUsaha: jenisUsaha,
-      submittedNamaPebisnis: namaPebisnis,
-      submittedEmail: email,
-      submittedNomorTelepon: nomorTelepon,
-      submittedTempatLahir: tempatLahir,
-      submittedTanggalLahir: tanggalLahir,
-      submittedProvinsi: provinsi,
-      submittedKabupatenKota: kabupatenKota,
-    }, () => {
-      console.log('form submitted');
-    });
+    if (password === passwordConfirmation) {
+      this.setState({
+        submittedNamaUsaha: namaUsaha,
+        submittedJenisUsaha: jenisUsaha,
+        submittedNamaPebisnis: namaPebisnis,
+        submittedEmail: email,
+        submittedNomorTelepon: nomorTelepon,
+        submittedTempatLahir: tempatLahir,
+        submittedTanggalLahir: tanggalLahir,
+        submittedProvinsi: provinsi,
+        submittedKabupatenKota: kabupatenKota,
+        submittedPassword: password,
+      }, () => {
+        console.log('form submitted');
+      });
+    } else {
+      console.log('password not match');
+    }
   }
 
   changeNamaUsahaValue(event) {
@@ -154,6 +168,14 @@ class RegisterSellerForm extends React.Component {
       kabupatenKota: event.target.options[event.target.selectedIndex].text,
       kabupatenKotaValue: event.target.value,
     });
+  }
+
+  changePasswordValue(event) {
+    this.setState({ password: event.target.value });
+  }
+
+  changePasswordConfirmationValue(event) {
+    this.setState({ passwordConfirmation: event.target.value });
   }
 
   fetchProvinsi() {
@@ -209,6 +231,8 @@ class RegisterSellerForm extends React.Component {
       isKabupatenKotaLoaded,
       kabupatenKotaValue,
       kabupatenKotaArray,
+      password,
+      passwordConfirmation,
     } = this.state;
     const provinsis = provinsiArray.map(i => <option key={i.id} value={i.id}>{i.nama}</option>);
     const kabupatenKotas = kabupatenKotaArray.map(
@@ -336,6 +360,28 @@ class RegisterSellerForm extends React.Component {
               </Select>
             </FormControl>
           )}
+          <TextField
+            id="filled-password-input"
+            label="Password"
+            className="TextField"
+            type="password"
+            margin="normal"
+            variant="filled"
+            fullWidth
+            value={password}
+            onChange={this.changePasswordValue}
+          />
+          <TextField
+            id="filled-passwordConfirmation-input"
+            label="Konfirmasi Password"
+            className="TextField"
+            type="password"
+            margin="normal"
+            variant="filled"
+            fullWidth
+            value={passwordConfirmation}
+            onChange={this.changePasswordConfirmationValue}
+          />
           <Button
             variant="contained"
             color="primary"
