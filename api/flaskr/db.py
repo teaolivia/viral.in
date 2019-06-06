@@ -21,3 +21,5 @@ app.config['DYNAMO_TABLES'] = [
          ProvisionedThroughput=dict(ReadCapacityUnits=5, WriteCapacityUnits=5)
     }
  ]
+
+ dynamo = Dynamo(app)
