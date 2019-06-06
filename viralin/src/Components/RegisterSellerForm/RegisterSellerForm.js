@@ -278,6 +278,7 @@ class RegisterSellerForm extends React.Component {
             margin="normal"
             variant="filled"
           />
+          <Typography variant="subtitle1">Informasi Kelahiran</Typography>
           <TextField
             id="filled-tempatlahir"
             label="Tempat Lahir"
