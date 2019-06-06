@@ -46,6 +46,8 @@ class RegisterSellerForm extends React.Component {
       submittedKabupatenKota: '',
       alamat: '',
       submittedAlamat: '',
+      username: '',
+      submittedUsername: '',
       password: '',
       passwordConfirmation: '',
       submittedPassword: '',
@@ -61,6 +63,7 @@ class RegisterSellerForm extends React.Component {
     this.changeProvinsiValue = this.changeProvinsiValue.bind(this);
     this.changeKabupatenKotaValue = this.changeKabupatenKotaValue.bind(this);
     this.changeAlamatValue = this.changeAlamatValue.bind(this);
+    this.changeUsernameValue = this.changeUsernameValue.bind(this);
     this.changePasswordValue = this.changePasswordValue.bind(this);
     this.changePasswordConfirmationValue = this.changePasswordConfirmationValue.bind(this);
   }
@@ -81,6 +84,7 @@ class RegisterSellerForm extends React.Component {
       submittedProvinsi,
       submittedKabupatenKota,
       submittedAlamat,
+      submittedUsername,
       submittedPassword,
     } = this.state;
     console.log(`Nama Usaha: ${submittedNamaUsaha}`);
@@ -93,6 +97,7 @@ class RegisterSellerForm extends React.Component {
     console.log(`Provinsi Alamat: ${submittedProvinsi}`);
     console.log(`Kabupaten/Kota Alamat: ${submittedKabupatenKota}`);
     console.log(`Alamat: ${submittedAlamat}`);
+    console.log(`Username: ${submittedUsername}`);
     console.log(`Password: ${submittedPassword}`);
   }
 
@@ -108,6 +113,7 @@ class RegisterSellerForm extends React.Component {
       provinsi,
       kabupatenKota,
       alamat,
+      username,
       password,
       passwordConfirmation,
     } = this.state;
@@ -124,6 +130,7 @@ class RegisterSellerForm extends React.Component {
         submittedProvinsi: provinsi,
         submittedKabupatenKota: kabupatenKota,
         submittedAlamat: alamat,
+        submittedUsername: username,
         submittedPassword: password,
       }, () => {
         console.log('form submitted');
@@ -179,6 +186,10 @@ class RegisterSellerForm extends React.Component {
 
   changeAlamatValue(event) {
     this.setState({ alamat: event.target.value });
+  }
+
+  changeUsernameValue(event) {
+    this.setState({ username: event.target.value });
   }
 
   changePasswordValue(event) {
@@ -243,6 +254,7 @@ class RegisterSellerForm extends React.Component {
       kabupatenKotaValue,
       kabupatenKotaArray,
       alamat,
+      username,
       password,
       passwordConfirmation,
     } = this.state;
@@ -381,6 +393,16 @@ class RegisterSellerForm extends React.Component {
             fullWidth
             value={alamat}
             onChange={this.changeAlamatValue}
+          />
+          <TextField
+            id="filled-username"
+            label="Username"
+            className="TextField"
+            margin="normal"
+            variant="filled"
+            fullWidth
+            value={username}
+            onChange={this.changeUsernameValue}
           />
           <TextField
             id="filled-password-input"
