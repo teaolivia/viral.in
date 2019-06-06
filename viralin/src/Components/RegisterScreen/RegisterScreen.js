@@ -13,6 +13,7 @@ import 'Components/RegisterScreen/RegisterScreen.css';
 
 import TabContainer from 'Components/TabContainer/TabContainer';
 import RegisterSellerForm from 'Components/RegisterSellerForm/RegisterSellerForm';
+import RegisterPromotorForm from 'Components/RegisterPromotorForm/RegisterPromotorForm';
 
 class RegisterScreen extends React.Component {
   constructor(props) {
@@ -64,6 +65,9 @@ class RegisterScreen extends React.Component {
                 <TabContainer>
                   { tabValue === 0
                   && <RegisterSellerForm />
+                  }
+                  { tabValue === 1
+                  && <RegisterPromotorForm />
                   }
                 </TabContainer>
               </Paper>
