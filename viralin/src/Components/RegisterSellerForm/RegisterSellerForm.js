@@ -302,6 +302,7 @@ class RegisterSellerForm extends React.Component {
             value={tanggalLahir}
             onChange={this.changeTanggalLahirValue}
           />
+          <Typography variant="subtitle1">Informasi Tempat Tinggal</Typography>
           { isLoadingProvinsi && <Typography>Mengambil data provinsi...</Typography> }
           { (isProvinsiLoaded && !isLoadingProvinsi)
           && (
