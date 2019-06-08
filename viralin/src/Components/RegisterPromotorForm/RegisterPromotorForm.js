@@ -58,7 +58,6 @@ class RegisterPromotorForm extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.changeProvinsiValue = this.changeProvinsiValue.bind(this);
     this.changeKabupatenKotaValue = this.changeKabupatenKotaValue.bind(this);
-    this.changePasswordConfirmationValue = this.changePasswordConfirmationValue.bind(this);
   }
 
   componentDidMount() {
@@ -158,10 +157,6 @@ class RegisterPromotorForm extends React.Component {
       kabupatenKota: event.target.options[event.target.selectedIndex].text,
       kabupatenKotaValue: event.target.value,
     });
-  }
-
-  changePasswordConfirmationValue(event) {
-    this.setState({ passwordConfirmation: event.target.value });
   }
 
   fetchProvinsi() {
@@ -433,9 +428,10 @@ class RegisterPromotorForm extends React.Component {
             type="password"
             margin="normal"
             variant="filled"
+            name="passwordConfirmation"
             fullWidth
             value={passwordConfirmation}
-            onChange={this.changePasswordConfirmationValue}
+            onChange={this.handleInputChange}
           />
           <Button
             variant="contained"
