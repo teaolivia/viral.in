@@ -63,35 +63,6 @@ class RegisterSellerForm extends React.Component {
     this.fetchProvinsi();
   }
 
-  componentDidUpdate() {
-    const {
-      submittedNamaUsaha,
-      submittedJenisUsaha,
-      submittedNamaPebisnis,
-      submittedEmail,
-      submittedNomorTelepon,
-      submittedTempatLahir,
-      submittedTanggalLahir,
-      submittedProvinsi,
-      submittedKabupatenKota,
-      submittedAlamat,
-      submittedUsername,
-      submittedPassword,
-    } = this.state;
-    console.log(`Nama Usaha: ${submittedNamaUsaha}`);
-    console.log(`Jenis Usaha: ${submittedJenisUsaha}`);
-    console.log(`Nama Pebisnis: ${submittedNamaPebisnis}`);
-    console.log(`Email: ${submittedEmail}`);
-    console.log(`Nomor Telepon: ${submittedNomorTelepon}`);
-    console.log(`Tempat Lahir: ${submittedTempatLahir}`);
-    console.log(`Tanggal Lahir: ${submittedTanggalLahir}`);
-    console.log(`Provinsi Alamat: ${submittedProvinsi}`);
-    console.log(`Kabupaten/Kota Alamat: ${submittedKabupatenKota}`);
-    console.log(`Alamat: ${submittedAlamat}`);
-    console.log(`Username: ${submittedUsername}`);
-    console.log(`Password: ${submittedPassword}`);
-  }
-
   handleSubmit(event) {
     const {
       namaUsaha,
@@ -124,7 +95,35 @@ class RegisterSellerForm extends React.Component {
         submittedUsername: username,
         submittedPassword: password,
       }, () => {
-        console.log('form submitted');
+        const {
+          submittedNamaUsaha,
+          submittedJenisUsaha,
+          submittedNamaPebisnis,
+          submittedEmail,
+          submittedNomorTelepon,
+          submittedTempatLahir,
+          submittedTanggalLahir,
+          submittedProvinsi,
+          submittedKabupatenKota,
+          submittedAlamat,
+          submittedUsername,
+          submittedPassword,
+        } = this.state;
+        const submitted = {
+          namaUsaha: submittedNamaUsaha,
+          jenisUsaha: submittedJenisUsaha,
+          namaPebisnis: submittedNamaPebisnis,
+          email: submittedEmail,
+          nomorTelepon: submittedNomorTelepon,
+          alamat: submittedAlamat,
+          provinsi: submittedProvinsi,
+          kabupatenKota: submittedKabupatenKota,
+          tempatLahir: submittedTempatLahir,
+          tanggalLahir: submittedTanggalLahir,
+          username: submittedUsername,
+          password: submittedPassword,
+        };
+        console.table(submitted);
       });
     } else {
       console.log('password not match');
