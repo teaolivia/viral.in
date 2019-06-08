@@ -382,9 +382,10 @@ class RegisterSellerForm extends React.Component {
             type="password"
             margin="normal"
             variant="filled"
+            name="password"
             fullWidth
             value={password}
-            onChange={this.changePasswordValue}
+            onChange={this.handleInputChange}
           />
           <TextField
             id="filled-passwordConfirmation-input"
@@ -393,9 +394,10 @@ class RegisterSellerForm extends React.Component {
             type="password"
             margin="normal"
             variant="filled"
+            name="passwordConfirmation"
             fullWidth
             value={passwordConfirmation}
-            onChange={this.changePasswordConfirmationValue}
+            onChange={this.handleInputChange}
           />
           <Button
             variant="contained"
