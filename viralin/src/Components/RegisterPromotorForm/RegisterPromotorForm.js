@@ -55,6 +55,7 @@ class RegisterPromotorForm extends React.Component {
       submittedPassword: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
     this.changeNamaPromotorValue = this.changeNamaPromotorValue.bind(this);
     this.changeEmailValue = this.changeEmailValue.bind(this);
     this.changeFacebookValue = this.changeFacebookValue.bind(this);
@@ -145,6 +146,13 @@ class RegisterPromotorForm extends React.Component {
     } else {
       console.log('password not match');
     }
+  }
+
+  handleInputChange(event) {
+    const { value, name } = event.target;
+    this.setState({
+      [name]: value,
+    });
   }
 
   changeNamaPromotorValue(event) {
