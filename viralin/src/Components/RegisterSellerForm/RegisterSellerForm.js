@@ -294,9 +294,10 @@ class RegisterSellerForm extends React.Component {
           <TextField
             id="filled-nomorTelepon"
             label="Nomor Telepon"
+            name="nomorTelepon"
             fullWidth
             value={nomorTelepon}
-            onChange={this.changeNomorTeleponValue}
+            onChange={this.handleInputChange}
             type="number"
             className="TextField"
             InputLabelProps={{
