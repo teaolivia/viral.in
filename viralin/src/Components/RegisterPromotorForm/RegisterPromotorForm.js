@@ -56,7 +56,6 @@ class RegisterPromotorForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.changeInstagramValue = this.changeInstagramValue.bind(this);
     this.changeTempatLahirValue = this.changeTempatLahirValue.bind(this);
     this.changeTanggalLahirValue = this.changeTanggalLahirValue.bind(this);
     this.changeProvinsiValue = this.changeProvinsiValue.bind(this);
@@ -148,10 +147,6 @@ class RegisterPromotorForm extends React.Component {
     this.setState({
       [name]: value,
     });
-  }
-
-  changeInstagramValue(event) {
-    this.setState({ instagram: event.target.value });
   }
 
   changeTempatLahirValue(event) {
@@ -389,9 +384,10 @@ class RegisterPromotorForm extends React.Component {
           <TextField
             id="filled-instagram"
             label="Halaman Instagram"
+            name="instagram"
             fullWidth
             value={instagram}
-            onChange={this.changeInstagramValue}
+            onChange={this.handleInputChange}
             type="text"
             className="TextField"
             InputLabelProps={{
