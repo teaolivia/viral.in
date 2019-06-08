@@ -56,7 +56,6 @@ class RegisterPromotorForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.changeTanggalLahirValue = this.changeTanggalLahirValue.bind(this);
     this.changeProvinsiValue = this.changeProvinsiValue.bind(this);
     this.changeKabupatenKotaValue = this.changeKabupatenKotaValue.bind(this);
     this.changeAlamatValue = this.changeAlamatValue.bind(this);
@@ -146,10 +145,6 @@ class RegisterPromotorForm extends React.Component {
     this.setState({
       [name]: value,
     });
-  }
-
-  changeTanggalLahirValue(event) {
-    this.setState({ tanggalLahir: event.target.value });
   }
 
   changeProvinsiValue(event) {
@@ -413,12 +408,13 @@ class RegisterPromotorForm extends React.Component {
             className="TextField"
             margin="normal"
             variant="filled"
+            name="tanggalLahir"
             fullWidth
             InputLabelProps={{
               shrink: true,
             }}
             value={tanggalLahir}
-            onChange={this.changeTanggalLahirValue}
+            onChange={this.handleInputChange}
           />
           <Typography variant="subtitle1">Informasi Akun</Typography>
           <TextField
