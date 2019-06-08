@@ -56,9 +56,6 @@ class RegisterSellerForm extends React.Component {
     this.changeTanggalLahirValue = this.changeTanggalLahirValue.bind(this);
     this.changeProvinsiValue = this.changeProvinsiValue.bind(this);
     this.changeKabupatenKotaValue = this.changeKabupatenKotaValue.bind(this);
-    this.changeUsernameValue = this.changeUsernameValue.bind(this);
-    this.changePasswordValue = this.changePasswordValue.bind(this);
-    this.changePasswordConfirmationValue = this.changePasswordConfirmationValue.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
@@ -159,18 +156,6 @@ class RegisterSellerForm extends React.Component {
       kabupatenKota: event.target.options[event.target.selectedIndex].text,
       kabupatenKotaValue: event.target.value,
     });
-  }
-
-  changeUsernameValue(event) {
-    this.setState({ username: event.target.value });
-  }
-
-  changePasswordValue(event) {
-    this.setState({ password: event.target.value });
-  }
-
-  changePasswordConfirmationValue(event) {
-    this.setState({ passwordConfirmation: event.target.value });
   }
 
   fetchProvinsi() {
@@ -385,9 +370,10 @@ class RegisterSellerForm extends React.Component {
             className="TextField"
             margin="normal"
             variant="filled"
+            name="username"
             fullWidth
             value={username}
-            onChange={this.changeUsernameValue}
+            onChange={this.handleInputChange}
           />
           <TextField
             id="filled-password-input"
