@@ -10,6 +10,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import FilledInput from '@material-ui/core/FilledInput';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import fetchProvinsiApi from 'Api/fetchProvinsiApi';
 import fetchKabupatenKotaApi from 'Api/fetchKabupatenKotaApi';
@@ -280,7 +281,12 @@ class RegisterPromotorForm extends React.Component {
             onChange={this.handleInputChange}
           />
           <br />
-          { isLoadingProvinsi && <Typography>Mengambil data provinsi...</Typography> }
+          { isLoadingProvinsi && (
+            <div>
+              <CircularProgress />
+              <Typography>Mengambil data provinsi...</Typography>
+            </div>
+          ) }
           { (isProvinsiLoaded && !isLoadingProvinsi)
           && (
             <FormControl className="FormControl" variant="filled" fullWidth>
@@ -298,7 +304,12 @@ class RegisterPromotorForm extends React.Component {
           )}
           <br />
           <br />
-          { isLoadingKabupatenKota && <Typography>Mengambil data kabupaten/kota...</Typography> }
+          { isLoadingKabupatenKota && (
+            <div>
+              <CircularProgress />
+              <Typography>Mengambil data kabupaten/kota...</Typography>
+            </div>
+          ) }
           { (isKabupatenKotaLoaded && !isLoadingKabupatenKota)
           && (
             <FormControl className="FormControl" variant="filled" fullWidth>
