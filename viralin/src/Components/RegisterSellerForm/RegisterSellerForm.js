@@ -53,9 +53,6 @@ class RegisterSellerForm extends React.Component {
       submittedPassword: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.changeEmailValue = this.changeEmailValue.bind(this);
-    this.changeNomorTeleponValue = this.changeNomorTeleponValue.bind(this);
-    this.changeTempatLahirValue = this.changeTempatLahirValue.bind(this);
     this.changeTanggalLahirValue = this.changeTanggalLahirValue.bind(this);
     this.changeProvinsiValue = this.changeProvinsiValue.bind(this);
     this.changeKabupatenKotaValue = this.changeKabupatenKotaValue.bind(this);
@@ -143,18 +140,6 @@ class RegisterSellerForm extends React.Component {
     this.setState({
       [name]: value,
     });
-  }
-
-  changeEmailValue(event) {
-    this.setState({ email: event.target.value });
-  }
-
-  changeNomorTeleponValue(event) {
-    this.setState({ nomorTelepon: event.target.value });
-  }
-
-  changeTempatLahirValue(event) {
-    this.setState({ tempatLahir: event.target.value });
   }
 
   changeTanggalLahirValue(event) {
@@ -304,7 +289,7 @@ class RegisterSellerForm extends React.Component {
             variant="filled"
             fullWidth
             value={email}
-            onChange={this.changeEmailValue}
+            onChange={this.handleInputChange}
           />
           <TextField
             id="filled-nomorTelepon"
