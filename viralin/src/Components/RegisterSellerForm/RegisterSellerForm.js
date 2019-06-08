@@ -53,7 +53,6 @@ class RegisterSellerForm extends React.Component {
       submittedPassword: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.changeNamaUsahaValue = this.changeNamaUsahaValue.bind(this);
     this.changeJenisUsahaValue = this.changeJenisUsahaValue.bind(this);
     this.changeNamaPebisnisValue = this.changeNamaPebisnisValue.bind(this);
     this.changeEmailValue = this.changeEmailValue.bind(this);
@@ -66,6 +65,7 @@ class RegisterSellerForm extends React.Component {
     this.changeUsernameValue = this.changeUsernameValue.bind(this);
     this.changePasswordValue = this.changePasswordValue.bind(this);
     this.changePasswordConfirmationValue = this.changePasswordConfirmationValue.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   componentDidMount() {
@@ -140,8 +140,11 @@ class RegisterSellerForm extends React.Component {
     }
   }
 
-  changeNamaUsahaValue(event) {
-    this.setState({ namaUsaha: event.target.value });
+  handleInputChange(event) {
+    const { value, name } = event.target;
+    this.setState({
+      [name]: value,
+    });
   }
 
   changeJenisUsahaValue(event) {
@@ -272,9 +275,10 @@ class RegisterSellerForm extends React.Component {
             className="TextField"
             margin="normal"
             variant="filled"
+            name="namaUsaha"
             fullWidth
             value={namaUsaha}
-            onChange={this.changeNamaUsahaValue}
+            onChange={this.handleInputChange}
           />
           <TextField
             id="filled-jenisusaha"
