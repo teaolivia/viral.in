@@ -143,7 +143,6 @@ class RegisterSellerForm extends React.Component {
   }
 
   changeProvinsiValue(event) {
-    // event.target.options[event.target.selectedIndex].text
     this.fetchKabupatenKota(event.target.value);
     this.setState({
       provinsi: event.target.options[event.target.selectedIndex].text,
