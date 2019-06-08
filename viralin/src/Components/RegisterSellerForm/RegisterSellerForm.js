@@ -56,7 +56,6 @@ class RegisterSellerForm extends React.Component {
     this.changeTanggalLahirValue = this.changeTanggalLahirValue.bind(this);
     this.changeProvinsiValue = this.changeProvinsiValue.bind(this);
     this.changeKabupatenKotaValue = this.changeKabupatenKotaValue.bind(this);
-    this.changeAlamatValue = this.changeAlamatValue.bind(this);
     this.changeUsernameValue = this.changeUsernameValue.bind(this);
     this.changePasswordValue = this.changePasswordValue.bind(this);
     this.changePasswordConfirmationValue = this.changePasswordConfirmationValue.bind(this);
@@ -160,10 +159,6 @@ class RegisterSellerForm extends React.Component {
       kabupatenKota: event.target.options[event.target.selectedIndex].text,
       kabupatenKotaValue: event.target.value,
     });
-  }
-
-  changeAlamatValue(event) {
-    this.setState({ alamat: event.target.value });
   }
 
   changeUsernameValue(event) {
