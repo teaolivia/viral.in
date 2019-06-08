@@ -64,37 +64,6 @@ class RegisterPromotorForm extends React.Component {
     this.fetchProvinsi();
   }
 
-  componentDidUpdate() {
-    const {
-      submittedNamaPromotor,
-      submittedEmail,
-      submittedFacebook,
-      submittedTwitter,
-      submittedInstagram,
-      submittedNomorTelepon,
-      submittedTempatLahir,
-      submittedTanggalLahir,
-      submittedProvinsi,
-      submittedKabupatenKota,
-      submittedAlamat,
-      submittedUsername,
-      submittedPassword,
-    } = this.state;
-    console.log(`Nama Promotor: ${submittedNamaPromotor}`);
-    console.log(`Email: ${submittedEmail}`);
-    console.log(`Facebook: ${submittedFacebook}`);
-    console.log(`Twitter: ${submittedTwitter}`);
-    console.log(`Instagram: ${submittedInstagram}`);
-    console.log(`Nomor Telepon: ${submittedNomorTelepon}`);
-    console.log(`Tempat Lahir: ${submittedTempatLahir}`);
-    console.log(`Tanggal Lahir: ${submittedTanggalLahir}`);
-    console.log(`Provinsi Alamat: ${submittedProvinsi}`);
-    console.log(`Kabupaten/Kota Alamat: ${submittedKabupatenKota}`);
-    console.log(`Alamat: ${submittedAlamat}`);
-    console.log(`Username: ${submittedUsername}`);
-    console.log(`Password: ${submittedPassword}`);
-  }
-
   handleSubmit(event) {
     const {
       namaPromotor,
@@ -129,7 +98,37 @@ class RegisterPromotorForm extends React.Component {
         submittedUsername: username,
         submittedPassword: password,
       }, () => {
-        console.log('form submitted');
+        const {
+          submittedNamaPromotor,
+          submittedEmail,
+          submittedFacebook,
+          submittedTwitter,
+          submittedInstagram,
+          submittedNomorTelepon,
+          submittedTempatLahir,
+          submittedTanggalLahir,
+          submittedProvinsi,
+          submittedKabupatenKota,
+          submittedAlamat,
+          submittedUsername,
+          submittedPassword,
+        } = this.state;
+        const submitted = {
+          namaPromotor: submittedNamaPromotor,
+          facebook: submittedFacebook,
+          twitter: submittedTwitter,
+          instagram: submittedInstagram,
+          email: submittedEmail,
+          nomorTelepon: submittedNomorTelepon,
+          alamat: submittedAlamat,
+          provinsi: submittedProvinsi,
+          kabupatenKota: submittedKabupatenKota,
+          tempatLahir: submittedTempatLahir,
+          tanggalLahir: submittedTanggalLahir,
+          username: submittedUsername,
+          password: submittedPassword,
+        };
+        console.table(submitted);
       });
     } else {
       console.log('password not match');
