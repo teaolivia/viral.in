@@ -59,7 +59,6 @@ class RegisterPromotorForm extends React.Component {
     this.changeFacebookValue = this.changeFacebookValue.bind(this);
     this.changeTwitterValue = this.changeTwitterValue.bind(this);
     this.changeInstagramValue = this.changeInstagramValue.bind(this);
-    this.changeNomorTeleponValue = this.changeNomorTeleponValue.bind(this);
     this.changeTempatLahirValue = this.changeTempatLahirValue.bind(this);
     this.changeTanggalLahirValue = this.changeTanggalLahirValue.bind(this);
     this.changeProvinsiValue = this.changeProvinsiValue.bind(this);
@@ -163,10 +162,6 @@ class RegisterPromotorForm extends React.Component {
 
   changeInstagramValue(event) {
     this.setState({ instagram: event.target.value });
-  }
-
-  changeNomorTeleponValue(event) {
-    this.setState({ nomorTelepon: event.target.value });
   }
 
   changeTempatLahirValue(event) {
@@ -304,9 +299,10 @@ class RegisterPromotorForm extends React.Component {
           <TextField
             id="filled-nomorTelepon"
             label="Nomor Telepon"
+            name="nomorTelepon"
             fullWidth
             value={nomorTelepon}
-            onChange={this.changeNomorTeleponValue}
+            onChange={this.handleInputChange}
             type="number"
             className="TextField"
             InputLabelProps={{
