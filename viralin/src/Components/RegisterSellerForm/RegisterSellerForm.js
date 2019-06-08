@@ -364,9 +364,10 @@ class RegisterSellerForm extends React.Component {
             className="TextField"
             margin="normal"
             variant="filled"
+            name="tempatLahir"
             fullWidth
             value={tempatLahir}
-            onChange={this.changeTempatLahirValue}
+            onChange={this.handleInputChange}
           />
           <TextField
             id="filledtanggallahir"
