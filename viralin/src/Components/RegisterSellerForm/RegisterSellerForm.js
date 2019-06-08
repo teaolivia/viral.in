@@ -53,7 +53,6 @@ class RegisterSellerForm extends React.Component {
       submittedPassword: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.changeNamaPebisnisValue = this.changeNamaPebisnisValue.bind(this);
     this.changeEmailValue = this.changeEmailValue.bind(this);
     this.changeNomorTeleponValue = this.changeNomorTeleponValue.bind(this);
     this.changeTempatLahirValue = this.changeTempatLahirValue.bind(this);
@@ -88,7 +87,7 @@ class RegisterSellerForm extends React.Component {
     } = this.state;
     console.log(`Nama Usaha: ${submittedNamaUsaha}`);
     console.log(`Jenis Usaha: ${submittedJenisUsaha}`);
-    console.log(`Nama Usaha: ${submittedNamaPebisnis}`);
+    console.log(`Nama Pebisnis: ${submittedNamaPebisnis}`);
     console.log(`Email: ${submittedEmail}`);
     console.log(`Nomor Telepon: ${submittedNomorTelepon}`);
     console.log(`Tempat Lahir: ${submittedTempatLahir}`);
@@ -144,10 +143,6 @@ class RegisterSellerForm extends React.Component {
     this.setState({
       [name]: value,
     });
-  }
-
-  changeNamaPebisnisValue(event) {
-    this.setState({ namaPebisnis: event.target.value });
   }
 
   changeEmailValue(event) {
@@ -292,9 +287,10 @@ class RegisterSellerForm extends React.Component {
             className="TextField"
             margin="normal"
             variant="filled"
+            name="namaPebisnis"
             fullWidth
             value={namaPebisnis}
-            onChange={this.changeNamaPebisnisValue}
+            onChange={this.handleInputChange}
           />
           <Typography variant="subtitle1">Informasi Kontak</Typography>
           <TextField
