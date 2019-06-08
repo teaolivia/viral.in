@@ -56,7 +56,6 @@ class RegisterPromotorForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.changeNamaPromotorValue = this.changeNamaPromotorValue.bind(this);
     this.changeEmailValue = this.changeEmailValue.bind(this);
     this.changeFacebookValue = this.changeFacebookValue.bind(this);
     this.changeTwitterValue = this.changeTwitterValue.bind(this);
@@ -153,10 +152,6 @@ class RegisterPromotorForm extends React.Component {
     this.setState({
       [name]: value,
     });
-  }
-
-  changeNamaPromotorValue(event) {
-    this.setState({ namaPromotor: event.target.value });
   }
 
   changeEmailValue(event) {
@@ -292,9 +287,10 @@ class RegisterPromotorForm extends React.Component {
             className="TextField"
             margin="normal"
             variant="filled"
+            name="namaPromotor"
             fullWidth
             value={namaPromotor}
-            onChange={this.changeNamaPromotorValue}
+            onChange={this.handleInputChange}
           />
           <Typography variant="subtitle1">Informasi Kontak</Typography>
           <TextField
