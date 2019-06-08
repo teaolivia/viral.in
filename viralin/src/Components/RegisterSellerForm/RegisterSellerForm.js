@@ -315,9 +315,10 @@ class RegisterSellerForm extends React.Component {
             className="TextField"
             margin="normal"
             variant="filled"
+            name="alamat"
             fullWidth
             value={alamat}
-            onChange={this.changeAlamatValue}
+            onChange={this.handleInputChange}
           />
           <br />
           { isLoadingProvinsi && <Typography>Mengambil data provinsi...</Typography> }
