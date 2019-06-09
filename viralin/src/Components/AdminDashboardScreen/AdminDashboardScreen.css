@@ -22,3 +22,15 @@
     border: solid black;
     border-radius: 10%;
 }
+
+@media only screen and (max-width: 768px) {
+    .AdminDashboardScreen .ButtonsContainer .Button:first-child {
+        margin-bottom: 40px;
+        margin-right:0;
+    }
+    
+    .AdminDashboardScreen .ButtonsContainer .Button:last-child {
+        margin-top: 40px;
+        margin-left:0;
+    }   
+}
