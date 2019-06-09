@@ -28,8 +28,8 @@ module.exports = {
         test: /\.css$/,
         loader: 'css-loader',
         query: {
-          modules: true,
-          localIdentName: '[name]',
+          // modules: true,
+          // localIdentName: '[name]',
         },
       },
     ],
