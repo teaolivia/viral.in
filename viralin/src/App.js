@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import LoginScreen from 'Components/LoginScreen/LoginScreen';
 import RegisterScreen from 'Components/RegisterScreen/RegisterScreen';
+import AdminDashboardScreen from 'Components/AdminDashboardScreen/AdminDashboardScreen';
 
 import './App.css';
 
@@ -21,6 +22,7 @@ class App extends Component {
             <Route path="/" exact component={LoginScreen} />
             <Route path="/login" exact component={LoginScreen} />
             <Route path="/register" exact component={RegisterScreen} />
+            <Route path="/admin-dashboard" exact component={AdminDashboardScreen} />
           </div>
         </Router>
       </form>
