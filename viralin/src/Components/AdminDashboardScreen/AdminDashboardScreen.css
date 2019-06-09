@@ -7,3 +7,18 @@
 .AdminDashboardScreen .Top {
     padding: 20px 30px;
 }
+
+.AdminDashboardScreen .ButtonsContainer .Button:first-child {
+    margin-right: 40px;
+}
+
+.AdminDashboardScreen .ButtonsContainer .Button:last-child {
+    margin-left: 40px;
+}
+
+.AdminDashboardScreen .ButtonsContainer .Button {
+    background-color: white;
+    padding: 40px 30px;
+    border: solid black;
+    border-radius: 10%;
+}
