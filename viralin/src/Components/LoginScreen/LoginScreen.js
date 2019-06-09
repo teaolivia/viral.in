@@ -44,12 +44,20 @@ class LoginScreen extends React.Component {
 
   loginButtonClickHandler() {
     const { username, password, tabValue } = this.state;
-    console.log('Login button click handler called!');
-    if (tabValue !== 2) {
-      console.log(`Username : ${username}`);
+    switch (tabValue) {
+      case 0:
+        // Login pebisnis
+        break;
+      case 1:
+        // Login promotor
+        break;
+      case 2:
+        // Login admin
+        window.location.href = '/admin-dashboard';
+        break;
+      default:
+        break;
     }
-    console.log(`Password : ${password}`);
-    console.log(`Tab Value : ${tabValue}`);
   }
 
   render() {
