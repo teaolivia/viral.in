@@ -16,6 +16,16 @@ import 'Components/LoginScreen/LoginScreen.css';
 
 import TabContainer from 'Components/TabContainer/TabContainer';
 
+const ADMIN_PASSWORD = 'asdf';
+
+const loginAdmin = (password) => {
+  if (password === ADMIN_PASSWORD) {
+    window.location.href = '/admin-dashboard';
+  } else {
+    alert('Password salah');
+  }
+};
+
 class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -53,7 +63,7 @@ class LoginScreen extends React.Component {
         break;
       case 2:
         // Login admin
-        window.location.href = '/admin-dashboard';
+        loginAdmin(password);
         break;
       default:
         break;
