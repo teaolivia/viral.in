@@ -5,15 +5,20 @@ import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 import Person from '@material-ui/icons/Person';
 import Typography from '@material-ui/core/Typography';
+import ButtonBase from '@material-ui/core/ButtonBase';
+import VolumeUp from '@material-ui/icons/VolumeUp';
+import Group from '@material-ui/icons/Group';
+import Accessibility from '@material-ui/icons/Accessibility';
+
 import 'Components/AdminDashboardScreen/AdminDashboardScreen.css';
 
 class AdminDashboardScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.setState({
+    this.state = {
       buttons: [
         {
-          imageUrl: '',
+          imageIcon: <VolumeUp fontSize="inherit" />,
           targetUrl: '',
           name: 'Konten',
           header: 'Kelola Konten Viral',
@@ -21,7 +26,7 @@ class AdminDashboardScreen extends React.Component {
           activeCount: 0,
         },
         {
-          imageUrl: '',
+          imageIcon: <Group fontSize="inherit" />,
           targetUrl: '',
           name: 'Pebisnis',
           header: 'Database Pebisnis',
@@ -29,7 +34,7 @@ class AdminDashboardScreen extends React.Component {
           activeCount: 0,
         },
         {
-          imageUrl: '',
+          imageIcon: <Accessibility fontSize="inherit" />,
           targetUrl: '',
           name: 'Promotor',
           header: 'Database Promotor',
@@ -37,10 +42,11 @@ class AdminDashboardScreen extends React.Component {
           activeCount: 0,
         },
       ],
-    });
+    };
   }
 
   render() {
+    const { buttons } = this.state;
     return (
       <div className="AdminDashboardScreen">
         <Grid
@@ -54,6 +60,42 @@ class AdminDashboardScreen extends React.Component {
           <span>&nbsp;</span>
           <span>&nbsp;</span>
           <Typography>Admin</Typography>
+        </Grid>
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+          spacing={0}
+          className="ButtonsContainer"
+        >
+          {buttons.map(button => (
+            <ButtonBase
+              key={button.name}
+              className="Button"
+            >
+              <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+                spacing={0}
+                className="ButtonsContainer"
+              >
+                <Typography variant="h1">{ button.imageIcon }</Typography>
+                <Typography variant="h5">{ button.header }</Typography>
+                <Grid
+                  container
+                  direction="column"
+                  alignItems="flex-start"
+                  justify="flex-start"
+                >
+                  <Typography variant="subtitle1">{ `Total ${button.name}: ${button.count}` }</Typography>
+                  <Typography variant="subtitle1">{ `Total Aktif: ${button.activeCount}` }</Typography>
+                </Grid>
+              </Grid>
+            </ButtonBase>
+          ))}
         </Grid>
       </div>
     );
