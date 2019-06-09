@@ -43,6 +43,12 @@ class AdminDashboardScreen extends React.Component {
         },
       ],
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    this.setState();
+    console.log(event.target);
   }
 
   render() {
@@ -73,6 +79,7 @@ class AdminDashboardScreen extends React.Component {
             <ButtonBase
               key={button.name}
               className="Button"
+              onClick={this.handleClick}
             >
               <Grid
                 container
