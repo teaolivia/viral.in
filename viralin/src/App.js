@@ -15,13 +15,15 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <div className="App">
-          <Route path="/" exact component={LoginScreen} />
-          <Route path="/login" exact component={LoginScreen} />
-          <Route path="/register" exact component={RegisterScreen} />
-        </div>
-      </Router>
+      <form action="http://127.0.0.1:5000" method="post">
+        <Router>
+          <div className="App">
+            <Route path="/" exact component={LoginScreen} />
+            <Route path="/login" exact component={LoginScreen} />
+            <Route path="/register" exact component={RegisterScreen} />
+          </div>
+        </Router>
+      </form>
     );
   }
 }

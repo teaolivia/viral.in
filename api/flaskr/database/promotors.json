@@ -1,5 +1,6 @@
-{
-    "234": {
+[
+    {
+        "_id": "234",
         "username": "spongebob",
         "password": "imagination",
         "name": "SpongeBob SquarePants",
@@ -16,7 +17,8 @@
         ],
         "level": "B"
     },
-    "567": {
+    {
+        "_id": "567",
         "username": "flyingdutchman",
         "password": "iwamboyouwambo",
         "name": "Flying Dutchman",
@@ -30,7 +32,8 @@
         "seller_id": "5678",
         "level": "A"
     },
-    "890": {
+    {
+        "_id": "890",
         "username": "karatechop",
         "password": "ismayonnaiseaninstrument",
         "name": "Sandy Cheeks",
@@ -44,4 +47,4 @@
         "seller_id": "1234",
         "level": "S"
     }
-}
+]

@@ -1,11 +1,17 @@
-from api import api
-from services import services
+from flask import request, make_response
+from flaskr import apis
 
-@app.route('/')
-@app.route('/sellers/<seller-id>')
-@app.route('/sellers/<seller-id>/<username>')
-@app.route('/sellers/<seller-id>/<password')
+@apis.route('/')
+def henlo():
+    """
+    Main menu, displaying login and register page of each user types.
+    """
+    return 'henlo'
 
-@app.route('/')
-def index():
-    return "Hello, World!"
+@apis.route('/bye')
+def bye():
+    return 'bye'
+
+@apis.errorhandler(404)
+def not_found(error):
+    return make_response(jsonify({'error': 'Not found'}), 404)

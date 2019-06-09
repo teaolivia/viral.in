@@ -1,5 +1,6 @@
-{
-    "1234": {
+[
+    {
+        "_id": "1234",
         "username": "co-ching",
         "password": "moneymoneymoney",
         "name": "Eugene Krabs",
@@ -8,7 +9,8 @@
         "phone": "+6281234567890",
         "business_type": "makanan dan minuman"
     },
-    "5678": {
+    {
+        "_id": "5678",
         "username": "betterthankrabypatty",
         "password": "krabypattysucks",
         "name": "Chum Bucket",
@@ -17,4 +19,4 @@
         "phone": "+628765432109",
         "business_type": "souvenir"
     }
-}
+]
