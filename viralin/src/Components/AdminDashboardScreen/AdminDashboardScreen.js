@@ -44,11 +44,17 @@ class AdminDashboardScreen extends React.Component {
       ],
     };
     this.handleClick = this.handleClick.bind(this);
+    this.toPromotorDatabaseScreen = this.toPromotorDatabaseScreen.bind(this);
   }
 
   handleClick(event) {
     this.setState();
     console.log(event.target);
+  }
+
+  toPromotorDatabaseScreen() {
+    this.setState();
+    window.location.href = '/promotor-database';
   }
 
   render() {
@@ -79,7 +85,7 @@ class AdminDashboardScreen extends React.Component {
             <ButtonBase
               key={button.name}
               className="Button"
-              onClick={this.handleClick}
+              onClick={(button.name === 'Promotor') ? this.toPromotorDatabaseScreen : this.handleClick}
             >
               <Grid
                 container
