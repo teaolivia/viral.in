@@ -39,11 +39,12 @@ class PromotorDatabaseScreen extends React.Component {
       rows: [
         createData('Joko', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
       ],
+      activeCount: 0,
     };
   }
 
   render() {
-    const { rows } = this.state;
+    const { rows, activeCount } = this.state;
     return (
       <div className="PromotorDatabaseScreen">
 
@@ -56,6 +57,7 @@ class PromotorDatabaseScreen extends React.Component {
         >
           <Grid
             container
+            item
             direction="row"
             alignItems="center"
             spacing={0}
@@ -68,6 +70,7 @@ class PromotorDatabaseScreen extends React.Component {
           </Grid>
           <Grid
             container
+            item
             direction="row"
             justify="center"
             alignItems="center"
@@ -79,6 +82,7 @@ class PromotorDatabaseScreen extends React.Component {
           </Grid>
           <Grid
             container
+            item
             direction="row-reverse"
             alignItems="center"
             spacing={0}
@@ -100,29 +104,48 @@ class PromotorDatabaseScreen extends React.Component {
           <Grid
             container
             direction="row"
-            spacing={0}
+            spacing={2}
             className="Tools"
+            alignItems="center"
           >
-            <Paper>
-              <TextField
-                className="SearchInput"
-                id="input-with-icon-searchinput"
-                label="Cari Promotor"
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <Search />
-                    </InputAdornment>
-                  ),
-                }}
-              />
-            </Paper>
-            <ButtonBase>
-              <Refresh />
-            </ButtonBase>
-            <ButtonBase>
-              <Sort />
-            </ButtonBase>
+            <Grid item>
+              <Paper>
+                <TextField
+                  className="SearchInput"
+                  id="input-with-icon-searchinput"
+                  label="Cari Promotor"
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <Search />
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </Paper>
+            </Grid>
+            <Grid item>
+              <ButtonBase>
+                <Refresh />
+              </ButtonBase>
+            </Grid>
+            <Grid item>
+              <ButtonBase>
+                <Sort />
+              </ButtonBase>
+            </Grid>
+            <Grid item>
+              <Typography variant="h5">
+                Total Promotor:
+                {rows.length}
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="h5">
+                Total Aktif:
+                {activeCount}
+              </Typography>
+            </Grid>
           </Grid>
           <Paper
             className="TableContainer"
@@ -140,7 +163,7 @@ class PromotorDatabaseScreen extends React.Component {
               </TableHead>
               <TableBody>
                 {rows.map(row => (
-                  <TableRow key={row.name}>
+                  <TableRow key={row.namaPromotor}>
                     <TableCell>{row.namaPromotor}</TableCell>
                     <TableCell>{row.kota}</TableCell>
                     <TableCell>{row.tanggalRegistrasi}</TableCell>
