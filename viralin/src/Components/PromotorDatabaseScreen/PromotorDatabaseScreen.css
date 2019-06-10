@@ -4,6 +4,10 @@
   background-color:grey;
 }
 
-.PromotorDatabaseScreen .Navigation{
+.PromotorDatabaseScreen .Navigation {
   padding: 20px 30px;
+}
+
+.PromotorDatabaseScreen .Main {
+  padding: 0 30px;
 }
