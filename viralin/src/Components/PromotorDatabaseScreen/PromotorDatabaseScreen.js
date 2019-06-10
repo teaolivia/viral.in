@@ -17,6 +17,7 @@ import Person from '@material-ui/icons/Person';
 import Home from '@material-ui/icons/Home';
 import Search from '@material-ui/icons/Search';
 import Refresh from '@material-ui/icons/Refresh';
+import Sort from '@material-ui/icons/Sort';
 import 'Components/PromotorDatabaseScreen/PromotorDatabaseScreen.css';
 
 const createData = (namaPromotor, kota, tanggalRegistrasi, status, jumlahKonten, namaKonten) => {
@@ -118,6 +119,9 @@ class PromotorDatabaseScreen extends React.Component {
             </Paper>
             <ButtonBase>
               <Refresh />
+            </ButtonBase>
+            <ButtonBase>
+              <Sort />
             </ButtonBase>
           </Grid>
           <Paper
