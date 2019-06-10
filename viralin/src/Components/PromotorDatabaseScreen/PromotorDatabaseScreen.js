@@ -56,7 +56,10 @@ class PromotorDatabaseScreen extends React.Component {
     const { rows, activeCount } = this.state;
     return (
       <div className="PromotorDatabaseScreen">
-        <AdminNavigation header="DATABASE PROMOTOR" />
+        <AdminNavigation
+          header="DATABASE PROMOTOR"
+          isWithHomeButton="true"
+        />
         <Grid
           container
           direction="column"
