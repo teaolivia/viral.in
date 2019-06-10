@@ -3,7 +3,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import Avatar from '@material-ui/core/Avatar';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -13,11 +12,11 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import Person from '@material-ui/icons/Person';
-import Home from '@material-ui/icons/Home';
 import Search from '@material-ui/icons/Search';
 import Refresh from '@material-ui/icons/Refresh';
 import Sort from '@material-ui/icons/Sort';
+
+import AdminNavigation from 'Components/AdminNavigation/AdminNavigation';
 import 'Components/PromotorDatabaseScreen/PromotorDatabaseScreen.css';
 
 const createData = (namaPromotor, kota, tanggalRegistrasi, status, jumlahKonten, namaKonten) => {
@@ -57,54 +56,7 @@ class PromotorDatabaseScreen extends React.Component {
     const { rows, activeCount } = this.state;
     return (
       <div className="PromotorDatabaseScreen">
-
-        <Grid
-          container
-          direction="row"
-          alignItems="center"
-          spacing={0}
-          className="Navigation"
-        >
-          <Grid
-            container
-            item
-            direction="row"
-            alignItems="center"
-            spacing={0}
-            className="Left"
-            xs={4}
-          >
-            <ButtonBase>
-              <Home />
-            </ButtonBase>
-          </Grid>
-          <Grid
-            container
-            item
-            direction="row"
-            justify="center"
-            alignItems="center"
-            spacing={0}
-            className="Middle"
-            xs={4}
-          >
-            <Typography variant="h5">DATABASE PROMOTOR</Typography>
-          </Grid>
-          <Grid
-            container
-            item
-            direction="row-reverse"
-            alignItems="center"
-            spacing={0}
-            className="Right"
-            xs={4}
-          >
-            <Avatar><Person /></Avatar>
-            <span>&nbsp;</span>
-            <span>&nbsp;</span>
-            <Typography>Admin</Typography>
-          </Grid>
-        </Grid>
+        <AdminNavigation header="DATABASE PROMOTOR" />
         <Grid
           container
           direction="column"
