@@ -15,6 +15,13 @@ class AdminNavigation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    this.setState();
+    window.location.href = '/';
+    console.log(event.target);
   }
 
   render() {
@@ -36,7 +43,7 @@ class AdminNavigation extends React.Component {
           className="Left"
           xs={4}
         >
-          <ButtonBase>
+          <ButtonBase onClick={this.handleClick}>
             <Home />
           </ButtonBase>
         </Grid>
