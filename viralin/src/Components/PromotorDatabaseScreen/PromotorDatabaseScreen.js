@@ -59,6 +59,7 @@ class PromotorDatabaseScreen extends React.Component {
         <AdminNavigation
           header="DATABASE PROMOTOR"
           isWithHomeButton="true"
+          username="Admin"
         />
         <Grid
           container
