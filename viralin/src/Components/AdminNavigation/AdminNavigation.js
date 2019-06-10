@@ -25,7 +25,7 @@ class AdminNavigation extends React.Component {
   }
 
   render() {
-    const { header } = this.props;
+    const { header, isWithHomeButton } = this.props;
     return (
       <Grid
         container
@@ -43,9 +43,11 @@ class AdminNavigation extends React.Component {
           className="Left"
           xs={4}
         >
-          <ButtonBase onClick={this.handleClick}>
-            <Home />
-          </ButtonBase>
+          { isWithHomeButton && (
+            <ButtonBase onClick={this.handleClick}>
+              <Home />
+            </ButtonBase>
+          )}
         </Grid>
         <Grid
           container
@@ -78,8 +80,14 @@ class AdminNavigation extends React.Component {
   }
 }
 
+AdminNavigation.defaultProps = {
+  header: '',
+  isWithHomeButton: false,
+};
+
 AdminNavigation.propTypes = {
-  header: PropTypes.string.isRequired,
+  header: PropTypes.string,
+  isWithHomeButton: PropTypes.bool,
 };
 
 export default AdminNavigation;
