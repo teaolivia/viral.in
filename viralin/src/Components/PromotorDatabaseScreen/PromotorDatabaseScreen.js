@@ -1,6 +1,7 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
+import 'Components/PromotorDatabaseScreen/PromotorDatabaseScreen.css';
 
 class PromotorDatabaseScreen extends React.Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class PromotorDatabaseScreen extends React.Component {
 
   render() {
     return (
-      <div>Promotor database</div>
+      <div className="PromotorDatabaseScreen">Promotor database</div>
     );
   }
 }
