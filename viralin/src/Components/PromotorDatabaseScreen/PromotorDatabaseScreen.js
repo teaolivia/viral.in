@@ -4,7 +4,9 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
+import ButtonBase from '@material-ui/core/ButtonBase';
 import Person from '@material-ui/icons/Person';
+import Home from '@material-ui/icons/Home';
 import 'Components/PromotorDatabaseScreen/PromotorDatabaseScreen.css';
 
 class PromotorDatabaseScreen extends React.Component {
@@ -28,9 +30,22 @@ class PromotorDatabaseScreen extends React.Component {
           alignItems="center"
           spacing={0}
           className="Top"
-          xs={6}
+          xs={4}
         >
-          kiri
+          <ButtonBase>
+            <Home />
+          </ButtonBase>
+        </Grid>
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+          spacing={0}
+          className="Top"
+          xs={4}
+        >
+          <Typography variants="h5">DATABASE PROMOTOR</Typography>
         </Grid>
         <Grid
           container
@@ -38,7 +53,7 @@ class PromotorDatabaseScreen extends React.Component {
           alignItems="center"
           spacing={0}
           className="Top"
-          xs={6}
+          xs={4}
         >
           <Avatar><Person /></Avatar>
           <span>&nbsp;</span>
