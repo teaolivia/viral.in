@@ -25,7 +25,12 @@ class AdminNavigation extends React.Component {
   }
 
   render() {
-    const { header, isWithHomeButton, username } = this.props;
+    const {
+      header,
+      isWithHomeButton,
+      username,
+      imageUrl,
+    } = this.props;
     return (
       <Grid
         container
@@ -70,7 +75,7 @@ class AdminNavigation extends React.Component {
           className="Right"
           xs={4}
         >
-          <Avatar><Person /></Avatar>
+          { imageUrl ? <Avatar src={imageUrl} /> : <Avatar><Person /></Avatar>}
           <span>&nbsp;</span>
           <span>&nbsp;</span>
           <Typography>{username}</Typography>
@@ -83,12 +88,14 @@ class AdminNavigation extends React.Component {
 AdminNavigation.defaultProps = {
   header: '',
   username: 'User',
+  imageUrl: '',
   isWithHomeButton: false,
 };
 
 AdminNavigation.propTypes = {
   header: PropTypes.string,
   username: PropTypes.string,
+  imageUrl: PropTypes.string,
   isWithHomeButton: PropTypes.bool,
 };
 
