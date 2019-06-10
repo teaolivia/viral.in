@@ -11,10 +11,6 @@
         "address": "Bikini Bottom 1 No. 43",
         "city": "Jakarta Pusat",
         "province": "DKI Jakarta",
-        "seller_id": [
-            "1234",
-            "5678"
-        ],
         "level": "B"
     },
     {
@@ -29,7 +25,6 @@
         "address": "VOC 2 No. 67",
         "city": "Surabaya",
         "province": "Jawa Timur",
-        "seller_id": "5678",
         "level": "A"
     },
     {
@@ -44,7 +39,6 @@
         "address": "Ir. H. Djuanda No. 48",
         "city": "Bandung",
         "province": "Jawa Barat",
-        "seller_id": "1234",
         "level": "S"
     }
 ]

@@ -1,0 +1,20 @@
+{
+    "TableName": "SellersTable",
+    "KeySchema": [
+      { "AttributeName": "SellerID", "KeyType": "HASH" }
+    ],
+    "AttributeDefinitions": [
+      { "AttributeName": "SellerID", "AttributeType": "S" },
+      { "AttributeName": "Username", "AttributeType": "S" },
+      { "AttributeName": "Password", "AttributeType": "S" },
+      { "AttributeName": "Name", "AttributeType": "S" },
+      { "AttributeName": "BusinessName", "AttributeType": "S" },
+      { "AttributeName": "Email", "AttributeType": "S" },
+      { "AttributeName": "Phone", "AttributeType": "S" },
+      { "AttributeName": "Business_Type", "AttributeType": "S" }
+    ],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 5,
+      "WriteCapacityUnits": 10
+    }
+}

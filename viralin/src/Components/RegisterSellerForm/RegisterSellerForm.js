@@ -221,7 +221,7 @@ class RegisterSellerForm extends React.Component {
     );
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form action="http://localhost:5000/sellers/register" method="post">
           <Typography variant="subtitle1">Registrasi Akun Bisnis</Typography>
           <TextField
             id="filled-namausaha"
@@ -365,6 +365,7 @@ class RegisterSellerForm extends React.Component {
             className="TextField"
             margin="normal"
             variant="filled"
+            name = "tanggalLahir"
             fullWidth
             InputLabelProps={{
               shrink: true,

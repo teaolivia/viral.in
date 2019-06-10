@@ -1,7 +1,5 @@
-from flaskr import apis, db, login
-from flask import Flask, session, request, abort
-# from flask_dynamo import Dynamo
-from flask_jwt import JWT, jwt_required, current_identity
+from flaskr import apis, db, login, bcrypt
+from flask import Flask, session, request, abort, make_response
 from werkzeug.security import generate_password_hash, check_password_hash, safe_str_cmp
 
 class User(object):
@@ -35,9 +33,10 @@ class User(object):
         else:
             print('wrong password')
 
-    def sign_up(self, username, password):
-        self.username = username
-        self.set_password(password)
+    def sign_up(self) -> object:
+        self.username = request.get_json()['username']
+        self.password = bcrypt.generate_password_hash(request.get_json()['password']).decode('utf-8')
+
 
 ## Flask-JWT Config
 # apis.debug = True
