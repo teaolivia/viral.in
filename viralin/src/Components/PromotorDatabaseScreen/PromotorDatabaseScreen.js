@@ -6,7 +6,7 @@ import 'Components/PromotorDatabaseScreen/PromotorDatabaseScreen.css';
 class PromotorDatabaseScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state();
+    this.state = {};
   }
 
   render() {
