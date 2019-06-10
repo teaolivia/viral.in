@@ -37,7 +37,17 @@ class PromotorDatabaseScreen extends React.Component {
     super(props);
     this.state = {
       rows: [
-        createData('Joko', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
+        createData('Joko1', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
+        createData('Joko2', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
+        createData('Joko3', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
+        createData('Joko4', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
+        createData('Joko5', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
+        createData('Joko6', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
+        createData('Joko7', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
+        createData('Joko8', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
+        createData('Joko9', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
+        createData('Joko10', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
+        createData('Joko11', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
       ],
       activeCount: 0,
     };
@@ -147,34 +157,36 @@ class PromotorDatabaseScreen extends React.Component {
               </Typography>
             </Grid>
           </Grid>
-          <Paper
-            className="TableContainer"
-          >
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Nama Promotor</TableCell>
-                  <TableCell>Kota</TableCell>
-                  <TableCell>Tanggal Registrasi</TableCell>
-                  <TableCell>Status</TableCell>
-                  <TableCell>Jumlah Konten Dishare</TableCell>
-                  <TableCell>Nama Konten Viral</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows.map(row => (
-                  <TableRow key={row.namaPromotor}>
-                    <TableCell>{row.namaPromotor}</TableCell>
-                    <TableCell>{row.kota}</TableCell>
-                    <TableCell>{row.tanggalRegistrasi}</TableCell>
-                    <TableCell>{row.status}</TableCell>
-                    <TableCell>{row.jumlahKonten}</TableCell>
-                    <TableCell>{row.namaKonten}</TableCell>
+          <Grid item xs={12}>
+            <Paper
+              className="TableContainer"
+            >
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Nama Promotor</TableCell>
+                    <TableCell>Kota</TableCell>
+                    <TableCell>Tanggal Registrasi</TableCell>
+                    <TableCell>Status</TableCell>
+                    <TableCell>Jumlah Konten Dishare</TableCell>
+                    <TableCell>Nama Konten Viral</TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </Paper>
+                </TableHead>
+                <TableBody>
+                  {rows.map(row => (
+                    <TableRow key={row.namaPromotor}>
+                      <TableCell>{row.namaPromotor}</TableCell>
+                      <TableCell>{row.kota}</TableCell>
+                      <TableCell>{row.tanggalRegistrasi}</TableCell>
+                      <TableCell>{row.status}</TableCell>
+                      <TableCell>{row.jumlahKonten}</TableCell>
+                      <TableCell>{row.namaKonten}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Paper>
+          </Grid>
         </Grid>
       </div>
     );

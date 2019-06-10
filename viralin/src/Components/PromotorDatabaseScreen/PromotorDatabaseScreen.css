@@ -15,3 +15,14 @@
 .PromotorDatabaseScreen .Main .Tools {
   margin-bottom: 20px;
 }
+
+.PromotorDatabaseScreen .Main .TableContainer {
+  max-height: 72vh;
+  overflow:scroll;
+}
+
+@media only screen and (max-width: 768px) {
+  .PromotorDatabaseScreen .Main .TableContainer {
+    max-height: 65vh;
+  }
+}
