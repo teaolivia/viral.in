@@ -79,7 +79,7 @@ class PromotorDatabaseScreen extends React.Component {
                 <TextField
                   className="SearchInput"
                   id="input-with-icon-searchinput"
-                  label="Cari Promotor"
+                  placeholder="Cari Promotor"
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
