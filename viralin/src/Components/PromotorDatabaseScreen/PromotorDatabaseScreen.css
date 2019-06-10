@@ -11,3 +11,7 @@
 .PromotorDatabaseScreen .Main {
   padding: 0 30px;
 }
+
+.PromotorDatabaseScreen .Main .Tools {
+  margin-bottom: 20px;
+}

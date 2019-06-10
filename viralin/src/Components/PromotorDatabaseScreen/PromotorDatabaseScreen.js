@@ -11,8 +11,11 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import TextField from '@material-ui/core/TextField';
+import InputAdornment from '@material-ui/core/InputAdornment';
 import Person from '@material-ui/icons/Person';
 import Home from '@material-ui/icons/Home';
+import Search from '@material-ui/icons/Search';
 import 'Components/PromotorDatabaseScreen/PromotorDatabaseScreen.css';
 
 const createData = (namaPromotor, kota, tanggalRegistrasi, status, jumlahKonten, namaKonten) => {
@@ -92,6 +95,27 @@ class PromotorDatabaseScreen extends React.Component {
           spacing={0}
           className="Main"
         >
+          <Grid
+            container
+            direction="row"
+            spacing={0}
+            className="Tools"
+          >
+            <Paper>
+              <TextField
+                className="SearchInput"
+                id="input-with-icon-searchinput"
+                label="Cari Promotor"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Search />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </Paper>
+          </Grid>
           <Paper
             className="TableContainer"
           >
