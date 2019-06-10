@@ -17,51 +17,53 @@ class PromotorDatabaseScreen extends React.Component {
 
   render() {
     return (
-      <Grid
-        container
-        direction="row"
-        alignItems="center"
-        spacing={0}
-        className="Top"
-      >
-        <Grid
-          container
-          direction="row"
-          alignItems="center"
-          spacing={0}
-          className="Top"
-          xs={4}
-        >
-          <ButtonBase>
-            <Home />
-          </ButtonBase>
-        </Grid>
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          alignItems="center"
-          spacing={0}
-          className="Top"
-          xs={4}
-        >
-          <Typography variants="h5">DATABASE PROMOTOR</Typography>
-        </Grid>
-        <Grid
-          container
-          direction="row-reverse"
-          alignItems="center"
-          spacing={0}
-          className="Top"
-          xs={4}
-        >
-          <Avatar><Person /></Avatar>
-          <span>&nbsp;</span>
-          <span>&nbsp;</span>
-          <Typography>Admin</Typography>
-        </Grid>
+      <div className="PromotorDatabaseScreen">
 
-      </Grid>
+        <Grid
+          container
+          direction="row"
+          alignItems="center"
+          spacing={0}
+          className="Navigation"
+        >
+          <Grid
+            container
+            direction="row"
+            alignItems="center"
+            spacing={0}
+            className="Left"
+            xs={4}
+          >
+            <ButtonBase>
+              <Home />
+            </ButtonBase>
+          </Grid>
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+            spacing={0}
+            className="Middle"
+            xs={4}
+          >
+            <Typography variant="h5">DATABASE PROMOTOR</Typography>
+          </Grid>
+          <Grid
+            container
+            direction="row-reverse"
+            alignItems="center"
+            spacing={0}
+            className="Right"
+            xs={4}
+          >
+            <Avatar><Person /></Avatar>
+            <span>&nbsp;</span>
+            <span>&nbsp;</span>
+            <Typography>Admin</Typography>
+          </Grid>
+        </Grid>
+      </div>
     );
   }
 }
