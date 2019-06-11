@@ -37,12 +37,11 @@ class PromotorDatabaseScreen extends React.Component {
         createData('Joko12', 'Bandung', '10-06-2019', 'Aktif', '1', 'Peduli kasih'),
         createData('Joko13', 'Bandung', '10-06-2019', 'Aktif', '1', 'Peduli kasih'),
       ],
-      activeCount: 0,
     };
   }
 
   render() {
-    const { rows, activeCount } = this.state;
+    const { rows } = this.state;
     return (
       <div className="PromotorDatabaseScreen">
         <AdminNavigation
@@ -61,7 +60,6 @@ class PromotorDatabaseScreen extends React.Component {
             'Nama Konten Viral',
           ]}
           rows={rows}
-          activeCount={activeCount}
         />
       </div>
     );
