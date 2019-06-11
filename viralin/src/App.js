@@ -7,6 +7,7 @@ import RegisterScreen from 'Components/RegisterScreen/RegisterScreen';
 import AdminDashboardScreen from 'Components/AdminDashboardScreen/AdminDashboardScreen';
 import PromotorDatabaseScreen from 'Components/PromotorDatabaseScreen/PromotorDatabaseScreen';
 import SellerDatabaseScreen from 'Components/SellerDatabaseScreen/SellerDatabaseScreen';
+import AdminKelolaKontenViral from 'Components/AdminKelolaKontenViral/AdminKelolaKontenViral';
 
 import './App.css';
 
@@ -25,8 +26,9 @@ class App extends Component {
             <Route path="/login" exact component={LoginScreen} />
             <Route path="/register" exact component={RegisterScreen} />
             <Route path="/admin-dashboard" exact component={AdminDashboardScreen} />
-            <Route path="/promotor-database" exact component={PromotorDatabaseScreen} />
+            <Route path="/admin-kelola-konten-viral" exact component={AdminKelolaKontenViral} />
             <Route path="/seller-database" exact component={SellerDatabaseScreen} />
+            <Route path="/promotor-database" exact component={PromotorDatabaseScreen} />
           </div>
         </Router>
       </form>
