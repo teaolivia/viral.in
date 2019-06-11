@@ -54,6 +54,9 @@ class AdminDashboardScreen extends React.Component {
       case 1:
         window.location.href = '/seller-database';
         break;
+      case 0:
+        window.location.href = '/admin-kelola-konten-viral';
+        break;
       default:
         break;
     }

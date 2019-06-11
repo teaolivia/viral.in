@@ -2,9 +2,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 
-import 'Components/AdminManageKontenViral/AdminManageKontenViral.css';
+import 'Components/AdminKelolaKontenViral/AdminKelolaKontenViral.css';
 
-class AdminManageKontenViral extends React.Component {
+class AdminKelolaKontenViral extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -12,9 +12,9 @@ class AdminManageKontenViral extends React.Component {
 
   render() {
     return (
-      <div className="AdminManageKontenViral" />
+      <div className="AdminKelolaKontenViral">hello world</div>
     );
   }
 }
 
-export default AdminManageKontenViral;
+export default AdminKelolaKontenViral;
