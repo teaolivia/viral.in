@@ -43,17 +43,20 @@ class AdminDashboardScreen extends React.Component {
       ],
     };
     this.handleClick = this.handleClick.bind(this);
-    this.toPromotorDatabaseScreen = this.toPromotorDatabaseScreen.bind(this);
   }
 
-  handleClick(event) {
+  handleClick(index) {
     this.setState();
-    console.log(event.target);
-  }
-
-  toPromotorDatabaseScreen() {
-    this.setState();
-    window.location.href = '/promotor-database';
+    switch (index) {
+      case 2:
+        window.location.href = '/promotor-database';
+        break;
+      case 1:
+        window.location.href = '/seller-database';
+        break;
+      default:
+        break;
+    }
   }
 
   render() {
@@ -69,11 +72,11 @@ class AdminDashboardScreen extends React.Component {
           spacing={0}
           className="ButtonsContainer"
         >
-          {buttons.map(button => (
+          {buttons.map((button, index) => (
             <ButtonBase
               key={button.name}
               className="Button"
-              onClick={(button.name === 'Promotor') ? this.toPromotorDatabaseScreen : this.handleClick}
+              onClick={e => this.handleClick(index, e)}
             >
               <Grid
                 container
