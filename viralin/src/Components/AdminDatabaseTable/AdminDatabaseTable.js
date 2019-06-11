@@ -19,6 +19,21 @@ import Sort from '@material-ui/icons/Sort';
 
 import 'Components/AdminDatabaseTable/AdminDatabaseTable.css';
 
+const countActive = (rows) => {
+  let count = 0;
+  rows.map((row) => {
+    Object.keys(row).map((key) => {
+      if (row[key] === 'Aktif') {
+        count += 1;
+      }
+      return true;
+    });
+    return true;
+  });
+
+  return count;
+};
+
 class AdminDatabaseTable extends React.Component {
   constructor(props) {
     super(props);
@@ -30,7 +45,6 @@ class AdminDatabaseTable extends React.Component {
       name,
       columns,
       rows,
-      activeCount,
     } = this.props;
     return (
       <div className="AdminDatabaseTable">
@@ -86,7 +100,7 @@ class AdminDatabaseTable extends React.Component {
             <Grid item>
               <Typography variant="h5">
                 Total Aktif:&nbsp;
-                {activeCount}
+                {countActive(rows)}
               </Typography>
             </Grid>
           </Grid>
@@ -103,16 +117,19 @@ class AdminDatabaseTable extends React.Component {
                   </TableRow>
                 </TableHead>
                 <TableBody className="TableBody">
-                  {rows.map(row => (
-                    <TableRow key={row.namaPromotor}>
-                      <TableCell>{row.namaPromotor}</TableCell>
-                      <TableCell>{row.kota}</TableCell>
-                      <TableCell>{row.tanggalRegistrasi}</TableCell>
-                      <TableCell>{row.status}</TableCell>
-                      <TableCell>{row.jumlahKonten}</TableCell>
-                      <TableCell>{row.namaKonten}</TableCell>
-                    </TableRow>
-                  ))}
+                  {rows.map((row, rowsIndex) => {
+                    const rowsKey = rowsIndex;
+                    return (
+                      <TableRow key={rowsKey}>
+                        {Object.keys(row).map((key, rowIndex) => {
+                          const rowKey = rowIndex;
+                          return (
+                            <TableCell key={`${rowsKey}${rowKey}`}>{row[key]}</TableCell>
+                          );
+                        })}
+                      </TableRow>
+                    );
+                  })}
                 </TableBody>
               </Table>
             </Paper>
@@ -126,14 +143,12 @@ class AdminDatabaseTable extends React.Component {
 AdminDatabaseTable.defaultProps = {
   name: '',
   rows: [],
-  activeCount: 0,
 };
 
 AdminDatabaseTable.propTypes = {
   name: PropTypes.string,
   columns: PropTypes.arrayOf(PropTypes.string).isRequired,
   rows: PropTypes.arrayOf(PropTypes.object),
-  activeCount: PropTypes.number,
 };
 
 
