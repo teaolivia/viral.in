@@ -1,0 +1,23 @@
+.AdminDatabaseTable .Main {
+  padding: 0 30px;
+}
+
+.AdminDatabaseTable .Main .Tools {
+  margin-bottom: 20px;
+}
+
+.AdminDatabaseTable .Main .TableBodyContainer {
+  height: 72vh;
+  max-height: 72vh;
+  overflow: scroll;
+}
+
+.AdminDatabaseTable .Main .TableBodyContainer .HeadRow {
+  background-color: lightgray;
+}
+
+@media only screen and (max-width: 768px) {
+  .AdminDatabaseTable .Main .TableContainer {
+    max-height: 65vh;
+  }
+}

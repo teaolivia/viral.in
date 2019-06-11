@@ -3,27 +3,3 @@
   min-height: 100vh;
   background-color:grey;
 }
-
-.PromotorDatabaseScreen .Main {
-  padding: 0 30px;
-}
-
-.PromotorDatabaseScreen .Main .Tools {
-  margin-bottom: 20px;
-}
-
-.PromotorDatabaseScreen .Main .TableBodyContainer {
-  height: 72vh;
-  max-height: 72vh;
-  overflow: scroll;
-}
-
-.PromotorDatabaseScreen .Main .TableBodyContainer .HeadRow {
-  background-color: lightgray;
-}
-
-@media only screen and (max-width: 768px) {
-  .PromotorDatabaseScreen .Main .TableContainer {
-    max-height: 65vh;
-  }
-}
