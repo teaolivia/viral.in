@@ -22,10 +22,6 @@
   background-color: lightgray;
 }
 
-.PromotorDatabaseScreen .Main .TableBodyContainer .TableBody{
-  
-}
-
 @media only screen and (max-width: 768px) {
   .PromotorDatabaseScreen .Main .TableContainer {
     max-height: 65vh;
