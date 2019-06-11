@@ -5,7 +5,11 @@ viral.in is an application to advertise products where there are promotors/refer
 **[INA]**
 viral.in merupakan aplikasi untuk mengiklankan produk dimana ada promotor / referal yang membantu dalam mempromosikan iklan tersebut, kemudian nantinya referal akan mendapatkan point yang dapat di cairkan dalam bentuk saldo rekening.
 
-![alt text](https://raw.githubusercontent.com/teaolivia/viral.in/dev-thea/ref/viralin-infrastructure.png)
+
+|![alt text](https://raw.githubusercontent.com/teaolivia/viral.in/dev-thea/ref/viralin-infrastructure.png)|
+|:--:| 
+| *viral.in architecture* |
+
 
 # ! please only make changes in your dev branch
 
