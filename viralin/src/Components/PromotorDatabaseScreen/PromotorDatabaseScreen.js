@@ -47,6 +47,8 @@ class PromotorDatabaseScreen extends React.Component {
         createData('Joko9', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
         createData('Joko10', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
         createData('Joko11', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
+        createData('Joko12', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
+        createData('Joko13', 'Bandung', '10-06-2019', 'Aktif', 1, 'Peduli kasih'),
       ],
       activeCount: 0,
     };
@@ -58,7 +60,7 @@ class PromotorDatabaseScreen extends React.Component {
       <div className="PromotorDatabaseScreen">
         <AdminNavigation
           header="DATABASE PROMOTOR"
-          isWithHomeButton="true"
+          isWithHomeButton
           username="Admin"
         />
         <Grid
@@ -115,20 +117,20 @@ class PromotorDatabaseScreen extends React.Component {
           </Grid>
           <Grid item xs={12}>
             <Paper
-              className="TableContainer"
+              className="TableBodyContainer"
             >
-              <Table>
+              <Table className="Table">
                 <TableHead>
-                  <TableRow>
-                    <TableCell>Nama Promotor</TableCell>
-                    <TableCell>Kota</TableCell>
-                    <TableCell>Tanggal Registrasi</TableCell>
-                    <TableCell>Status</TableCell>
-                    <TableCell>Jumlah Konten Dishare</TableCell>
-                    <TableCell>Nama Konten Viral</TableCell>
+                  <TableRow className="HeadRow">
+                    <TableCell variant="head">Nama Promotor</TableCell>
+                    <TableCell variant="head">Kota</TableCell>
+                    <TableCell variant="head">Tanggal Registrasi</TableCell>
+                    <TableCell variant="head">Status</TableCell>
+                    <TableCell variant="head">Jumlah Konten Dishare</TableCell>
+                    <TableCell variant="head">Nama Konten Viral</TableCell>
                   </TableRow>
                 </TableHead>
-                <TableBody>
+                <TableBody className="TableBody">
                   {rows.map(row => (
                     <TableRow key={row.namaPromotor}>
                       <TableCell>{row.namaPromotor}</TableCell>
