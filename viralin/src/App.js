@@ -6,6 +6,7 @@ import LoginScreen from 'Components/LoginScreen/LoginScreen';
 import RegisterScreen from 'Components/RegisterScreen/RegisterScreen';
 import AdminDashboardScreen from 'Components/AdminDashboardScreen/AdminDashboardScreen';
 import PromotorDatabaseScreen from 'Components/PromotorDatabaseScreen/PromotorDatabaseScreen';
+import SellerDatabaseScreen from 'Components/SellerDatabaseScreen/SellerDatabaseScreen';
 
 import './App.css';
 
@@ -25,6 +26,7 @@ class App extends Component {
             <Route path="/register" exact component={RegisterScreen} />
             <Route path="/admin-dashboard" exact component={AdminDashboardScreen} />
             <Route path="/promotor-database" exact component={PromotorDatabaseScreen} />
+            <Route path="/seller-database" exact component={SellerDatabaseScreen} />
           </div>
         </Router>
       </form>
