@@ -10,7 +10,7 @@ const header = 'Konten Viral Aktif';
 const header2 = 'Konten Viral Non-Aktif';
 
 const activeData = {
-  _id: '1',
+  id: '1',
   title: 'Indihome Paket Gamer',
   seller: 'Joko',
   status: 'TRUE',
@@ -20,7 +20,7 @@ const activeData = {
 };
 
 const nonActiveData = {
-  _id: '3',
+  id: '3',
   title: 'Buy 1 Get 1',
   seller: 'Bodo',
   status: 'FALSE',
@@ -53,6 +53,7 @@ class AdminKelolaKontenViralScreen extends React.Component {
           rows={activeRows}
           name={name}
           header={header}
+          withSearchBox
         />
         <AdminKontenViralTable
           className="Tabel"
