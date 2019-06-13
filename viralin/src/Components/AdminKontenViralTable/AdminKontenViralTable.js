@@ -1,6 +1,7 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -28,7 +29,13 @@ class AdminKontenViralTable extends React.Component {
   }
 
   render() {
-    const { rows, header, name, className } = this.props;
+    const {
+      rows,
+      header,
+      name,
+      className,
+      withSearchBox,
+    } = this.props;
     return (
       <Grid
         className={className}
@@ -65,22 +72,24 @@ class AdminKontenViralTable extends React.Component {
                 <Refresh />
               </ButtonBase>
             </Grid>
-            <Grid item>
-              <Paper>
-                <TextField
-                  className="SearchInput"
-                  id="input-with-icon-searchinput"
-                  placeholder={`Cari ${name}`}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <Search />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-              </Paper>
-            </Grid>
+            { withSearchBox && (
+              <Grid item>
+                <Paper>
+                  <TextField
+                    className="SearchInput"
+                    id="input-with-icon-searchinput"
+                    placeholder={`Cari ${name}`}
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <Search />
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                </Paper>
+              </Grid>
+            )}
           </Grid>
         </Grid>
         {/* untuk yang listview */}
@@ -99,9 +108,16 @@ class AdminKontenViralTable extends React.Component {
                     parseInt(row.duration_end.slice(3, 5), 10) - 1,
                     row.duration_end.slice(0, 2),
                   );
+
+                  let endDay = `0${endDate.getDate()}`;
+                  endDay = endDay.slice(-2);
+
+                  let endMonth = `0${endDate.getMonth() + 1}`;
+                  endMonth = endMonth.slice(-2);
+
                   const progress = ((today - startDate) / (endDate - startDate));
                   return (
-                    <TableRow key={`${row._id}-row`}>
+                    <TableRow key={`${row.id}-row`}>
                       <TableCell>
                         <Grid
                           container
@@ -147,7 +163,7 @@ class AdminKontenViralTable extends React.Component {
                             xs={4}
                             direction="column"
                           >
-                            <Typography variant="subtitle1" align="center">{`${('0' + endDate.getDate()).slice(-2)}-${('0' + (endDate.getMonth() + 1)).slice(-2)}-${endDate.getFullYear()}`}</Typography>
+                            <Typography variant="subtitle1" align="center">{`${endDay}-${endMonth}-${endDate.getFullYear()}`}</Typography>
                           </Grid>
                           <Grid
                             container
@@ -196,19 +212,6 @@ class AdminKontenViralTable extends React.Component {
                     </TableRow>
                   );
                 })}
-                {/* {rows.map((row, rowsIndex) => {
-                  const rowsKey = rowsIndex;
-                  return (
-                    <TableRow key={rowsKey}>
-                      {Object.keys(row).map((key, rowIndex) => {
-                        const rowKey = rowIndex;
-                        return (
-                          <TableCell key={`${rowsKey}${rowKey}`}>{row[key]}</TableCell>
-                        );
-                      })}
-                    </TableRow>
-                  );
-                })} */}
               </TableBody>
             </Table>
           </Paper>
@@ -217,5 +220,21 @@ class AdminKontenViralTable extends React.Component {
     );
   }
 }
+
+AdminKontenViralTable.defaultProps = {
+  name: '',
+  className: '',
+  header: '',
+  rows: [],
+  withSearchBox: false,
+};
+
+AdminKontenViralTable.propTypes = {
+  name: PropTypes.string,
+  className: PropTypes.string,
+  header: PropTypes.string,
+  rows: PropTypes.arrayOf(PropTypes.object),
+  withSearchBox: PropTypes.bool,
+};
 
 export default AdminKontenViralTable;
