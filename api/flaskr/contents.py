@@ -1,6 +1,7 @@
 #!flask/bin/python
 from flask import Flask, jsonify, request, abort, make_response, url_for
-from flaskr import apis, login, db
+from flaskr import apis, login, db, dynamo
+from models import models
 import json
 import requests
 
@@ -30,7 +31,7 @@ class Contents(object):
             'asset': request.json['asset'],
             'games_rule': request.json.get('rule', "")
         }
-        x = db.Contents.insert_one(content)
+        dynamo.tables['contents'].put_item(content)
         
     @apis.route('/<seller_id>/contents', methods=['DELETE'])
     def delete_content(self, seller_id, content_id, promo_id):
