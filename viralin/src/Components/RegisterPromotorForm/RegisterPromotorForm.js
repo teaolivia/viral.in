@@ -224,7 +224,7 @@ class RegisterPromotorForm extends React.Component {
     );
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form action="http://localhost:5000/promotors" method="post">
           <Typography variant="subtitle1">Registrasi Akun Promotor</Typography>
           <TextField
             id="filled-namaPromotor"

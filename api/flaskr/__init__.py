@@ -17,8 +17,12 @@ db = client.viralinDB
 
 ## DynamoDB Config
 dynamo_client = boto3.client('dynamodb')
-def get_items():
-    return dynamo_client.scan(TableName='viralinDB')
+# resource
+dynamo = boto3.resource('dynamodb')
+sellers = dynamo.Table('sellers')
+promotors = dynamo.Table('promotors')
+contents = dynamo.Table('contents')
+contentpromo = dynamo.Table('content-promotor')
 
 ## Flask-JWT
 apis.debug = True

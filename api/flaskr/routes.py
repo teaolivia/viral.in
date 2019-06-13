@@ -1,5 +1,5 @@
 from flask import request, make_response, jsonify
-from flaskr import apis
+from flaskr import apis, sellers
 
 @apis.route('/')
 def henlo():
@@ -10,7 +10,8 @@ def henlo():
 
 @apis.route('/bye')
 def bye():
-    return 'bye'
+    return jsonify(sellers.creation_date_time)
+
 
 @apis.errorhandler(404)
 def not_found(error):

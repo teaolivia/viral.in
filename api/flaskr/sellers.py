@@ -1,8 +1,9 @@
 #!flask/bin/python
-from jsonschema import validate
-from jsonschema.exceptions import ValidationError
-from jsonschema.exceptions import SchemaError
-from flaskr import apis, login, db
+from flask_jwt_extended import (
+    JWTManager, jwt_required, create_access_token,
+    get_jwt_identity
+)
+from flaskr import apis, login, db, dynamo_client, sellers
 from flask import Flask, Blueprint, jsonify, request, abort, make_response
 from flaskr.user import User
 from bson.objectid import ObjectId
@@ -15,16 +16,26 @@ class Sellers(User):
         User.__init__(self, username, password)
         self.seller_id = id
 
-    @apis.route('/sellers/login', methods=['POST'])
-    def log_in(self, username, password):
-        pass
-        # 'email '= request.json['email']
-        # 'password' = request.json['password']
-        if bcrypt.check_password_hash('password', password):
-            access_token = create_access_token(identity={})
+    @apis.route('/sellers/login', methods=['GET','POST'])
+    def login():
+        if not request.is_json:
+            return jsonify({"msg": "Missing JSON in request"}), 400
+        username = request.json.get('username', None)
+        password = request.json.get('password', None)
+        if not username:
+            return jsonify({"msg": "Missing username parameter"}), 400
+        if not password:
+            return jsonify({"msg": "Missing password parameter"}), 400
+        if username != 'test' or password != 'test':
+            return jsonify({"msg": "Bad username or password"}), 401
+        access_token = create_access_token(identity=username)
+        return jsonify(access_token=access_token), 200
 
-    @apis.route('/sellers/register', methods=['POST'])
-    def sign_up(self):
+        # if bcrypt.check_password_hash('password', password):
+        #     access_token = create_access_token(identity={})
+
+    @apis.route('/sellers/register', methods=['GET','POST'])
+    def sign_up():
         business_name = request.args.get('namaUsaha', None)
         business_type = request.args.get('jenisUsaha', None)
         name = request.args.get('namaPebisnis', None)
@@ -52,8 +63,15 @@ class Sellers(User):
 
     @apis.route('/sellers', methods=['GET'])
     def get_sellers():
-        seller_documents = [doc for doc in db.Sellers.find({})]
-        return jsonify({'sellers': seller_documents})
+        return jsonify(dynamo_client.scan(
+            TableName='sellers',
+            # Key={
+            #     'seller_id': seller_id
+            #     }
+            )
+        )
+        # seller_documents = [doc for doc in db.Sellers.find({})]
+        # return jsonify({'sellers': seller_documents})
 
     @apis.route('/sellers/<seller_id>/<username>', methods=['GET'])
     def get_sellers_username(username):
@@ -77,7 +95,7 @@ class Sellers(User):
     # count contents from a seller_id
     @apis.route('/sellers/<seller_id>/total_contents', methods=['POST'])
     def count_total_contents(seller_id):
-        return db.ContentsPromotors.find({"seller_id": seller_id}).count()
+        return jsonify(contents.item_count)
 
     # count total referral
     @apis.route('/sellers/<seller_id>/total_referrals', methods=['POST'])
@@ -88,6 +106,25 @@ class Sellers(User):
     # all sellers' functions
     def make_new_contents(sellerId, contentId):
         self.add_contents(username,sellerId)
+
+    @apis.route('/sellers/<seller_id>/stats', methods=['GET'])
+    def view_stats(seller_id):
+        # response = sellers.get_item(
+        #     Key={
+        #         'seller_id': seller_id
+        #     }
+        # )
+        # item = response['Item']
+        return jsonify(dynamo_client.scan(
+            TableName='sellers',
+            ScanFilter={
+                'seller_id': {
+                    'AttributeValueList' : [{'S': seller_id}],
+                    "ComparisonOperator": "EQ"
+                    }
+                }
+            )
+        )
 
 # # main driver
 # if __name__ == '__main__':

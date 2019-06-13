@@ -8,6 +8,7 @@ import AdminDashboardScreen from 'Components/AdminDashboardScreen/AdminDashboard
 import PromotorDatabaseScreen from 'Components/PromotorDatabaseScreen/PromotorDatabaseScreen';
 import SellerDatabaseScreen from 'Components/SellerDatabaseScreen/SellerDatabaseScreen';
 
+
 import './App.css';
 
 class App extends Component {

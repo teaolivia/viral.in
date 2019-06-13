@@ -1,6 +1,5 @@
 from flaskr import apis, db, login, bcrypt
 from flask import Flask, session, request, abort, make_response
-from werkzeug.security import generate_password_hash, check_password_hash, safe_str_cmp
 
 class User(object):
     def __init__(self, username, password):
@@ -8,7 +7,7 @@ class User(object):
         self.set_password(password)
 
     def set_password(self, password):
-        self.pw_hash = generate_password_hash(password)
+        self.pw_hash = bcrypt.generate_password_hash(password)
 
     def check_password(self, password) -> str:
         return check_password_hash(self.pw_hash, password)
