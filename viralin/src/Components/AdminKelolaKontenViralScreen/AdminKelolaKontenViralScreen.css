@@ -1,0 +1,11 @@
+.AdminKelolaKontenViral {
+  width:100%;
+  min-height: 100vh;
+  background-color:grey;
+}
+
+.Tabel {
+  padding: 0 40px;
+  max-height: 40vh;
+  overflow:scroll;
+}
