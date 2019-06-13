@@ -8,10 +8,6 @@ import AdminDashboardScreen from 'Components/AdminDashboardScreen/AdminDashboard
 import PromotorDatabaseScreen from 'Components/PromotorDatabaseScreen/PromotorDatabaseScreen';
 import SellerDatabaseScreen from 'Components/SellerDatabaseScreen/SellerDatabaseScreen';
 import AdminKelolaKontenViralScreen from 'Components/AdminKelolaKontenViralScreen/AdminKelolaKontenViralScreen';
-<<<<<<< HEAD
-
-=======
->>>>>>> 0c4d8365c1643a33f9a82b390c6e9342d1937e1a
 
 import './App.css';
 
