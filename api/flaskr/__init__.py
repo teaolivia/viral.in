@@ -15,16 +15,21 @@ apis = Flask(__name__)
 client = MongoClient('mongodb://localhost:27017/')
 db = client.viralinDB
 
-## DynamoDB Config
-dynamo_client = boto3.client('dynamodb')
-# resource
-dynamo = boto3.resource('dynamodb')
-sellers = dynamo.Table('sellers')
-promotors = dynamo.Table('promotors')
-contents = dynamo.Table('contents')
-contentpromo = dynamo.Table('content-promotor')
+## flask_dynamo
+dynamo = Dynamo(apis)
 
-## Flask-JWT
+## DynamoDB Config
+# client
+dbsession = boto3.Session(profile_name='admin-db')
+dynamo_client = dbsession.client('dynamodb')
+# resource
+dynamo_resource = dbsession.resource('dynamodb')
+sellers = dynamo_resource.Table('sellers')
+promotors = dynamo_resource.Table('promotors')
+contents = dynamo_resource.Table('contents')
+contentpromo = dynamo_resource.Table('content-promotor')
+
+## flask-JWT-extended
 apis.debug = True
 apis.config['JWT_SECRET_KEY'] = 'laskarkalong2019'
 apis.config['JWT_ACCESS_TOKEN_EXPIRES'] = datetime.timedelta(days=1)

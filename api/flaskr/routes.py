@@ -1,3 +1,4 @@
+from models import models
 from flask import request, make_response, jsonify
 from flaskr import apis, sellers
 
@@ -11,7 +12,6 @@ def henlo():
 @apis.route('/bye')
 def bye():
     return jsonify(sellers.creation_date_time)
-
 
 @apis.errorhandler(404)
 def not_found(error):

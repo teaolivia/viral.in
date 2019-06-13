@@ -3,7 +3,7 @@ from flask_jwt_extended import (
     JWTManager, jwt_required, create_access_token,
     get_jwt_identity
 )
-from flaskr import apis, login, db, dynamo_client, sellers
+from flaskr import apis, login, db, dynamo, sellers
 from flask import Flask, Blueprint, jsonify, request, abort, make_response
 from flaskr.user import User
 from bson.objectid import ObjectId
@@ -30,9 +30,6 @@ class Sellers(User):
             return jsonify({"msg": "Bad username or password"}), 401
         access_token = create_access_token(identity=username)
         return jsonify(access_token=access_token), 200
-
-        # if bcrypt.check_password_hash('password', password):
-        #     access_token = create_access_token(identity={})
 
     @apis.route('/sellers/register', methods=['GET','POST'])
     def sign_up():
@@ -63,13 +60,13 @@ class Sellers(User):
 
     @apis.route('/sellers', methods=['GET'])
     def get_sellers():
-        return jsonify(dynamo_client.scan(
-            TableName='sellers',
-            # Key={
-            #     'seller_id': seller_id
-            #     }
+        response = sellers.get_item(
+            Key={
+                'seller_id': seller_id
+                }
             )
-        )
+        item = response['Item']
+        return jsonify(item)
         # seller_documents = [doc for doc in db.Sellers.find({})]
         # return jsonify({'sellers': seller_documents})
 
@@ -109,22 +106,13 @@ class Sellers(User):
 
     @apis.route('/sellers/<seller_id>/stats', methods=['GET'])
     def view_stats(seller_id):
-        # response = sellers.get_item(
-        #     Key={
-        #         'seller_id': seller_id
-        #     }
-        # )
-        # item = response['Item']
-        return jsonify(dynamo_client.scan(
-            TableName='sellers',
-            ScanFilter={
-                'seller_id': {
-                    'AttributeValueList' : [{'S': seller_id}],
-                    "ComparisonOperator": "EQ"
-                    }
-                }
-            )
+        response = sellers.get_item(
+            Key={
+                'seller_id': seller_id
+            }
         )
+        item = response['Item']
+        return item
 
 # # main driver
 # if __name__ == '__main__':
