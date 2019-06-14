@@ -2,7 +2,8 @@
 
 /node_modules
 
-./viralin/package-lock.json
-package-lock.json
-
-/ref
+./package-lock.json
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
