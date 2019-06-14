@@ -1,5 +1,0 @@
-#requirements.txt
-flask
-zappa
-pytest
-boto3
