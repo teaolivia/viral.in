@@ -13,15 +13,15 @@ class Contents(object):
     def add_content(self, sellerId):
         if not request.json or not 'username' in request.json:
             abort(400)
-        title = request.args.get('title',None)
-        content_type = request.args.get('content_type',None)
-        duration = request.args.get('duration',None)
-        form = request.args.get('type',None)
-        asset = request.args.get('asset',None)            
-        rule = request.args.get('game_rule',None)
+        title = request.form.get('title',None)
+        content_type = request.form.get('content_type',None)
+        duration = request.form.get('duration',None)
+        form = request.form.get('type',None)
+        asset = request.form.get('asset',None)            
+        rule = request.form.get('game_rule',None)
         content = {
             'seller_id': request.json['seller_id'],
-            '_id': tasks[-1]['_id'] + 1,
+            '_id': _id[-1]['_id'] + 1,
             'title': request.json['title'],
             'status': True,
             'isReferral': True,
