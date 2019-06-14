@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "an application to promote sellers",
   "main": "index.js",
+  "engines": {
+    "npm": "6.9.0",
+    "node": "10.15.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --hot --mode development",
